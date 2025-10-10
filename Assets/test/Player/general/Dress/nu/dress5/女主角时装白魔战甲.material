@@ -1,0 +1,16 @@
+material 女主角时装白魔战甲 : Mtl_Character_Lit
+{
+	set_texture_alias <baseTexture> tga_女主角时装白魔战甲.png
+	technique
+	{
+		pass
+		{
+			emissive 0.4 0.4 0.4 1
+			alpha_rejection greater 128
+			texture_unit
+			{
+				tex_address_mode clamp
+			}
+		}
+	}
+}

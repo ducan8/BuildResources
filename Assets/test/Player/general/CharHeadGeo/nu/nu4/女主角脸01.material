@@ -1,0 +1,16 @@
+material 女主角脸01 : Mtl_Character_Lit
+{
+	set_texture_alias <baseTexture> jpg_女主角脸01.dds
+	technique
+	{
+		pass
+		{
+			specular 0.15 0.15 0.15 1 10
+			emissive 0.4 0.4 0.4 1
+			texture_unit
+			{
+				tex_address_mode clamp
+			}
+		}
+	}
+}

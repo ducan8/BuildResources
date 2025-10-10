@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+	Weapon -> Category: Loại vũ khí (-1 là mặc định cho tất cả các loại vũ khí, ngoài ra nếu có vũ khí đặc biệt khác thì khai báo bên trên)
+	Weapon : Effect -> Series: Ngũ hành (0: Mặc định, 1: Kim, 2: Mộc, 3: Thủy, 4: Hỏa, 5: Thổ)
+	Weapon : Effect : Detail -> Level: Cấp cường hóa [0..16]
+	
+	=== Hiệu ứng thân vũ khí ===
+	Weapon : Effect : Detail -> BodyGlowColorFrom: Mã màu 1
+	Weapon : Effect : Detail -> BodyGlowColorTo: Mã màu 2
+	=> Màu nhấp nháy sẽ chạy qua lại giữa 2 màu
+	
+	Weapon : Effect : Detail -> BodyGlowThreshold: Ngưỡng sáng
+	Weapon : Effect : Detail -> BodyAlpha: Alpha [0..100]
+	
+	=== Hiệu ứng sao chấm xung quanh ===
+	Weapon : Effect : Detail -> StarColor: Mã màu điểm chấm
+	Weapon : Effect : Detail -> StarAlpha: Alpha điểm chấm [0..100]
+-->
+<WeaponEnhanceConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!-- Thiết lập độ lệch theo vũ khí so với thiết lập mặc định -->
+	<ConfigDiv>
+		<!-- Triển thủ -->
+		<WeaponDiv Category="11" BodyGlowThresholdAdd="50" BodyAlphaAdd="0" StarAlphaAdd="0" />
+		<!-- Phi Đao -->
+		<WeaponDiv Category="22" BodyGlowThresholdAdd="50" BodyAlphaAdd="0" StarAlphaAdd="0" />
+		<!-- Tụ Tiễn -->
+		<WeaponDiv Category="23" BodyGlowThresholdAdd="50" BodyAlphaAdd="0" StarAlphaAdd="0"/>
+	</ConfigDiv>
+	<!-- End -->
+	
+	<!-- Mặc định cho tất cả các loại vũ khí (KHÔNG XÓA) -->
+	<Weapon Category="-1">
+		<!-- Hệ Kim -->
+		<Effect Series="1">
+			<Detail Level="0" BodyGlowColorFrom="#FFFF00" BodyGlowColorTo="#FF7500" BodyGlowThreshold="40" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="1" BodyGlowColorFrom="#FFFF00" BodyGlowColorTo="#FF7500" BodyGlowThreshold="40" BodyAlpha="6" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="2" BodyGlowColorFrom="#FFFF00" BodyGlowColorTo="#FF7500" BodyGlowThreshold="40" BodyAlpha="12" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="3" BodyGlowColorFrom="#FFFF00" BodyGlowColorTo="#FF7500" BodyGlowThreshold="40" BodyAlpha="18" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="4" BodyGlowColorFrom="#FFFF00" BodyGlowColorTo="#FF7500" BodyGlowThreshold="40" BodyAlpha="25" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="5" BodyGlowColorFrom="#FFFF00" BodyGlowColorTo="#FF7500" BodyGlowThreshold="40" BodyAlpha="31" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="6" BodyGlowColorFrom="#FFFF00" BodyGlowColorTo="#FF7500" BodyGlowThreshold="40" BodyAlpha="37" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="7" BodyGlowColorFrom="#FFFF00" BodyGlowColorTo="#FF7500" BodyGlowThreshold="40" BodyAlpha="43" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="8" BodyGlowColorFrom="#FFFF00" BodyGlowColorTo="#FF7500" BodyGlowThreshold="40" BodyAlpha="50" StarColor="#FFFFFF" StarAlpha="10" />
+			<Detail Level="9" BodyGlowColorFrom="#FFFF00" BodyGlowColorTo="#FF7500" BodyGlowThreshold="40" BodyAlpha="56" StarColor="#FFFFFF" StarAlpha="20" />
+			<Detail Level="10" BodyGlowColorFrom="#FFFF00" BodyGlowColorTo="#FF7500" BodyGlowThreshold="40" BodyAlpha="62" StarColor="#FFFFFF" StarAlpha="30" />
+			<Detail Level="11" BodyGlowColorFrom="#FFFF00" BodyGlowColorTo="#FF7500" BodyGlowThreshold="40" BodyAlpha="68" StarColor="#FFFFFF" StarAlpha="40" />
+			<Detail Level="12" BodyGlowColorFrom="#FFFF00" BodyGlowColorTo="#FF7500" BodyGlowThreshold="40" BodyAlpha="75" StarColor="#FFFFFF" StarAlpha="50" />
+			<Detail Level="13" BodyGlowColorFrom="#FFFF00" BodyGlowColorTo="#FF7500" BodyGlowThreshold="40" BodyAlpha="81" StarColor="#FFFFFF" StarAlpha="60" />
+			<Detail Level="14" BodyGlowColorFrom="#FFFF00" BodyGlowColorTo="#FF7500" BodyGlowThreshold="40" BodyAlpha="87" StarColor="#FFFFFF" StarAlpha="70" />
+			<Detail Level="15" BodyGlowColorFrom="#FFFF00" BodyGlowColorTo="#FF7500" BodyGlowThreshold="40" BodyAlpha="93" StarColor="#FFFFFF" StarAlpha="80" />
+			<Detail Level="16" BodyGlowColorFrom="#FFFF00" BodyGlowColorTo="#FF7500" BodyGlowThreshold="40" BodyAlpha="100" StarColor="#FFFFFF" StarAlpha="80" />
+		</Effect>
+		<!-- Hệ Mộc -->
+		<Effect Series="2">
+			<Detail Level="0" BodyGlowColorFrom="#07A800" BodyGlowColorTo="#0BFF00" BodyGlowThreshold="50" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="1" BodyGlowColorFrom="#07A800" BodyGlowColorTo="#0BFF00" BodyGlowThreshold="50" BodyAlpha="6" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="2" BodyGlowColorFrom="#07A800" BodyGlowColorTo="#0BFF00" BodyGlowThreshold="50" BodyAlpha="12" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="3" BodyGlowColorFrom="#07A800" BodyGlowColorTo="#0BFF00" BodyGlowThreshold="50" BodyAlpha="18" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="4" BodyGlowColorFrom="#07A800" BodyGlowColorTo="#0BFF00" BodyGlowThreshold="50" BodyAlpha="25" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="5" BodyGlowColorFrom="#07A800" BodyGlowColorTo="#0BFF00" BodyGlowThreshold="50" BodyAlpha="31" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="6" BodyGlowColorFrom="#07A800" BodyGlowColorTo="#0BFF00" BodyGlowThreshold="50" BodyAlpha="37" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="7" BodyGlowColorFrom="#07A800" BodyGlowColorTo="#0BFF00" BodyGlowThreshold="50" BodyAlpha="43" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="8" BodyGlowColorFrom="#07A800" BodyGlowColorTo="#0BFF00" BodyGlowThreshold="50" BodyAlpha="50" StarColor="#FFFFFF" StarAlpha="10" />
+			<Detail Level="9" BodyGlowColorFrom="#07A800" BodyGlowColorTo="#0BFF00" BodyGlowThreshold="50" BodyAlpha="56" StarColor="#FFFFFF" StarAlpha="20" />
+			<Detail Level="10" BodyGlowColorFrom="#07A800" BodyGlowColorTo="#0BFF00" BodyGlowThreshold="50" BodyAlpha="62" StarColor="#FFFFFF" StarAlpha="30" />
+			<Detail Level="11" BodyGlowColorFrom="#07A800" BodyGlowColorTo="#0BFF00" BodyGlowThreshold="50" BodyAlpha="68" StarColor="#FFFFFF" StarAlpha="40" />
+			<Detail Level="12" BodyGlowColorFrom="#07A800" BodyGlowColorTo="#0BFF00" BodyGlowThreshold="50" BodyAlpha="75" StarColor="#FFFFFF" StarAlpha="50" />
+			<Detail Level="13" BodyGlowColorFrom="#07A800" BodyGlowColorTo="#0BFF00" BodyGlowThreshold="50" BodyAlpha="81" StarColor="#FFFFFF" StarAlpha="60" />
+			<Detail Level="14" BodyGlowColorFrom="#07A800" BodyGlowColorTo="#0BFF00" BodyGlowThreshold="50" BodyAlpha="87" StarColor="#FFFFFF" StarAlpha="70" />
+			<Detail Level="15" BodyGlowColorFrom="#07A800" BodyGlowColorTo="#0BFF00" BodyGlowThreshold="50" BodyAlpha="93" StarColor="#FFFFFF" StarAlpha="80" />
+			<Detail Level="16" BodyGlowColorFrom="#07A800" BodyGlowColorTo="#0BFF00" BodyGlowThreshold="50" BodyAlpha="100" StarColor="#FFFFFF" StarAlpha="80" />
+		</Effect>
+		<!-- Hệ Thủy -->
+		<Effect Series="3">
+			<Detail Level="0" BodyGlowColorFrom="#005EA8" BodyGlowColorTo="#008EFF" BodyGlowThreshold="50" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="1" BodyGlowColorFrom="#005EA8" BodyGlowColorTo="#008EFF" BodyGlowThreshold="50" BodyAlpha="6" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="2" BodyGlowColorFrom="#005EA8" BodyGlowColorTo="#008EFF" BodyGlowThreshold="50" BodyAlpha="12" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="3" BodyGlowColorFrom="#005EA8" BodyGlowColorTo="#008EFF" BodyGlowThreshold="50" BodyAlpha="18" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="4" BodyGlowColorFrom="#005EA8" BodyGlowColorTo="#008EFF" BodyGlowThreshold="50" BodyAlpha="25" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="5" BodyGlowColorFrom="#005EA8" BodyGlowColorTo="#008EFF" BodyGlowThreshold="50" BodyAlpha="31" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="6" BodyGlowColorFrom="#005EA8" BodyGlowColorTo="#008EFF" BodyGlowThreshold="50" BodyAlpha="37" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="7" BodyGlowColorFrom="#005EA8" BodyGlowColorTo="#008EFF" BodyGlowThreshold="50" BodyAlpha="43" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="8" BodyGlowColorFrom="#005EA8" BodyGlowColorTo="#008EFF" BodyGlowThreshold="50" BodyAlpha="50" StarColor="#FFFFFF" StarAlpha="10" />
+			<Detail Level="9" BodyGlowColorFrom="#005EA8" BodyGlowColorTo="#008EFF" BodyGlowThreshold="50" BodyAlpha="56" StarColor="#FFFFFF" StarAlpha="20" />
+			<Detail Level="10" BodyGlowColorFrom="#005EA8" BodyGlowColorTo="#008EFF" BodyGlowThreshold="50" BodyAlpha="62" StarColor="#FFFFFF" StarAlpha="30" />
+			<Detail Level="11" BodyGlowColorFrom="#005EA8" BodyGlowColorTo="#008EFF" BodyGlowThreshold="50" BodyAlpha="68" StarColor="#FFFFFF" StarAlpha="40" />
+			<Detail Level="12" BodyGlowColorFrom="#005EA8" BodyGlowColorTo="#008EFF" BodyGlowThreshold="50" BodyAlpha="75" StarColor="#FFFFFF" StarAlpha="50" />
+			<Detail Level="13" BodyGlowColorFrom="#005EA8" BodyGlowColorTo="#008EFF" BodyGlowThreshold="50" BodyAlpha="81" StarColor="#FFFFFF" StarAlpha="60" />
+			<Detail Level="14" BodyGlowColorFrom="#005EA8" BodyGlowColorTo="#008EFF" BodyGlowThreshold="50" BodyAlpha="87" StarColor="#FFFFFF" StarAlpha="70" />
+			<Detail Level="15" BodyGlowColorFrom="#005EA8" BodyGlowColorTo="#008EFF" BodyGlowThreshold="50" BodyAlpha="93" StarColor="#FFFFFF" StarAlpha="80" />
+			<Detail Level="16" BodyGlowColorFrom="#005EA8" BodyGlowColorTo="#008EFF" BodyGlowThreshold="50" BodyAlpha="100" StarColor="#FFFFFF" StarAlpha="80" />
+		</Effect>
+		<!-- Hệ Hỏa -->
+		<Effect Series="4">
+			<Detail Level="0" BodyGlowColorFrom="#A91100" BodyGlowColorTo="#FF1A00" BodyGlowThreshold="50" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="1" BodyGlowColorFrom="#A91100" BodyGlowColorTo="#FF1A00" BodyGlowThreshold="50" BodyAlpha="6" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="2" BodyGlowColorFrom="#A91100" BodyGlowColorTo="#FF1A00" BodyGlowThreshold="50" BodyAlpha="12" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="3" BodyGlowColorFrom="#A91100" BodyGlowColorTo="#FF1A00" BodyGlowThreshold="50" BodyAlpha="18" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="4" BodyGlowColorFrom="#A91100" BodyGlowColorTo="#FF1A00" BodyGlowThreshold="50" BodyAlpha="25" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="5" BodyGlowColorFrom="#A91100" BodyGlowColorTo="#FF1A00" BodyGlowThreshold="50" BodyAlpha="31" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="6" BodyGlowColorFrom="#A91100" BodyGlowColorTo="#FF1A00" BodyGlowThreshold="50" BodyAlpha="37" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="7" BodyGlowColorFrom="#A91100" BodyGlowColorTo="#FF1A00" BodyGlowThreshold="50" BodyAlpha="43" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="8" BodyGlowColorFrom="#A91100" BodyGlowColorTo="#FF1A00" BodyGlowThreshold="50" BodyAlpha="50" StarColor="#FFFFFF" StarAlpha="10" />
+			<Detail Level="9" BodyGlowColorFrom="#A91100" BodyGlowColorTo="#FF1A00" BodyGlowThreshold="50" BodyAlpha="56" StarColor="#FFFFFF" StarAlpha="20" />
+			<Detail Level="10" BodyGlowColorFrom="#A91100" BodyGlowColorTo="#FF1A00" BodyGlowThreshold="50" BodyAlpha="62" StarColor="#FFFFFF" StarAlpha="30" />
+			<Detail Level="11" BodyGlowColorFrom="#A91100" BodyGlowColorTo="#FF1A00" BodyGlowThreshold="50" BodyAlpha="68" StarColor="#FFFFFF" StarAlpha="40" />
+			<Detail Level="12" BodyGlowColorFrom="#A91100" BodyGlowColorTo="#FF1A00" BodyGlowThreshold="50" BodyAlpha="75" StarColor="#FFFFFF" StarAlpha="50" />
+			<Detail Level="13" BodyGlowColorFrom="#A91100" BodyGlowColorTo="#FF1A00" BodyGlowThreshold="50" BodyAlpha="81" StarColor="#FFFFFF" StarAlpha="60" />
+			<Detail Level="14" BodyGlowColorFrom="#A91100" BodyGlowColorTo="#FF1A00" BodyGlowThreshold="50" BodyAlpha="87" StarColor="#FFFFFF" StarAlpha="70" />
+			<Detail Level="15" BodyGlowColorFrom="#A91100" BodyGlowColorTo="#FF1A00" BodyGlowThreshold="50" BodyAlpha="93" StarColor="#FFFFFF" StarAlpha="80" />
+			<Detail Level="16" BodyGlowColorFrom="#A91100" BodyGlowColorTo="#FF1A00" BodyGlowThreshold="50" BodyAlpha="100" StarColor="#FFFFFF" StarAlpha="80" />
+		</Effect>
+		<!-- Hệ Thổ -->
+		<Effect Series="5">
+			<Detail Level="0" BodyGlowColorFrom="#A99178" BodyGlowColorTo="#FFDDB7" BodyGlowThreshold="39" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="1" BodyGlowColorFrom="#A99178" BodyGlowColorTo="#FFDDB7" BodyGlowThreshold="39" BodyAlpha="6" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="2" BodyGlowColorFrom="#A99178" BodyGlowColorTo="#FFDDB7" BodyGlowThreshold="39" BodyAlpha="12" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="3" BodyGlowColorFrom="#A99178" BodyGlowColorTo="#FFDDB7" BodyGlowThreshold="39" BodyAlpha="18" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="4" BodyGlowColorFrom="#A99178" BodyGlowColorTo="#FFDDB7" BodyGlowThreshold="39" BodyAlpha="25" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="5" BodyGlowColorFrom="#A99178" BodyGlowColorTo="#FFDDB7" BodyGlowThreshold="39" BodyAlpha="31" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="6" BodyGlowColorFrom="#A99178" BodyGlowColorTo="#FFDDB7" BodyGlowThreshold="39" BodyAlpha="37" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="7" BodyGlowColorFrom="#A99178" BodyGlowColorTo="#FFDDB7" BodyGlowThreshold="39" BodyAlpha="43" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="8" BodyGlowColorFrom="#A99178" BodyGlowColorTo="#FFDDB7" BodyGlowThreshold="39" BodyAlpha="50" StarColor="#FFFFFF" StarAlpha="10" />
+			<Detail Level="9" BodyGlowColorFrom="#A99178" BodyGlowColorTo="#FFDDB7" BodyGlowThreshold="39" BodyAlpha="56" StarColor="#FFFFFF" StarAlpha="20" />
+			<Detail Level="10" BodyGlowColorFrom="#A99178" BodyGlowColorTo="#FFDDB7" BodyGlowThreshold="39" BodyAlpha="62" StarColor="#FFFFFF" StarAlpha="30" />
+			<Detail Level="11" BodyGlowColorFrom="#A99178" BodyGlowColorTo="#FFDDB7" BodyGlowThreshold="39" BodyAlpha="68" StarColor="#FFFFFF" StarAlpha="40" />
+			<Detail Level="12" BodyGlowColorFrom="#A99178" BodyGlowColorTo="#FFDDB7" BodyGlowThreshold="39" BodyAlpha="75" StarColor="#FFFFFF" StarAlpha="50" />
+			<Detail Level="13" BodyGlowColorFrom="#A99178" BodyGlowColorTo="#FFDDB7" BodyGlowThreshold="39" BodyAlpha="81" StarColor="#FFFFFF" StarAlpha="60" />
+			<Detail Level="14" BodyGlowColorFrom="#A99178" BodyGlowColorTo="#FFDDB7" BodyGlowThreshold="39" BodyAlpha="87" StarColor="#FFFFFF" StarAlpha="70" />
+			<Detail Level="15" BodyGlowColorFrom="#A99178" BodyGlowColorTo="#FFDDB7" BodyGlowThreshold="39" BodyAlpha="93" StarColor="#FFFFFF" StarAlpha="80" />
+			<Detail Level="16" BodyGlowColorFrom="#A99178" BodyGlowColorTo="#FFDDB7" BodyGlowThreshold="39" BodyAlpha="100" StarColor="#FFFFFF" StarAlpha="80" />
+		</Effect>
+		<!-- Hệ không rõ -->
+		<Effect Series="0">
+			<Detail Level="0" BodyGlowColorFrom="#FFFFFF" BodyGlowColorTo="#FFFFFF" BodyGlowThreshold="0" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="1" BodyGlowColorFrom="#FFFFFF" BodyGlowColorTo="#FFFFFF" BodyGlowThreshold="0" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="2" BodyGlowColorFrom="#FFFFFF" BodyGlowColorTo="#FFFFFF" BodyGlowThreshold="0" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="3" BodyGlowColorFrom="#FFFFFF" BodyGlowColorTo="#FFFFFF" BodyGlowThreshold="0" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="4" BodyGlowColorFrom="#FFFFFF" BodyGlowColorTo="#FFFFFF" BodyGlowThreshold="0" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="5" BodyGlowColorFrom="#FFFFFF" BodyGlowColorTo="#FFFFFF" BodyGlowThreshold="0" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="6" BodyGlowColorFrom="#FFFFFF" BodyGlowColorTo="#FFFFFF" BodyGlowThreshold="0" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="7" BodyGlowColorFrom="#FFFFFF" BodyGlowColorTo="#FFFFFF" BodyGlowThreshold="0" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="8" BodyGlowColorFrom="#FFFFFF" BodyGlowColorTo="#FFFFFF" BodyGlowThreshold="0" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="9" BodyGlowColorFrom="#FFFFFF" BodyGlowColorTo="#FFFFFF" BodyGlowThreshold="0" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="10" BodyGlowColorFrom="#FFFFFF" BodyGlowColorTo="#FFFFFF" BodyGlowThreshold="0" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="11" BodyGlowColorFrom="#FFFFFF" BodyGlowColorTo="#FFFFFF" BodyGlowThreshold="0" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="12" BodyGlowColorFrom="#FFFFFF" BodyGlowColorTo="#FFFFFF" BodyGlowThreshold="0" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="13" BodyGlowColorFrom="#FFFFFF" BodyGlowColorTo="#FFFFFF" BodyGlowThreshold="0" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="14" BodyGlowColorFrom="#FFFFFF" BodyGlowColorTo="#FFFFFF" BodyGlowThreshold="0" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="15" BodyGlowColorFrom="#FFFFFF" BodyGlowColorTo="#FFFFFF" BodyGlowThreshold="0" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+			<Detail Level="16" BodyGlowColorFrom="#FFFFFF" BodyGlowColorTo="#FFFFFF" BodyGlowThreshold="0" BodyAlpha="0" StarColor="#FFFFFF" StarAlpha="0" />
+		</Effect>
+	</Weapon>
+	<!-- End -->
+</WeaponEnhanceConfig>

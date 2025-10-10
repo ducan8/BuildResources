@@ -1,0 +1,17 @@
+material 女主角脸型霓裳羽衣套装 : Mtl_Character_Lit
+{
+	set_texture_alias <baseTexture> tga_女主角脸型霓裳羽衣套装.png
+	technique
+	{
+		pass
+		{
+			specular 0.15 0.15 0.15 1 10
+			emissive 0.4 0.4 0.4 1
+			alpha_rejection greater 128
+			texture_unit
+			{
+				tex_address_mode clamp
+			}
+		}
+	}
+}

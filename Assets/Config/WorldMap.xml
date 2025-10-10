@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	BẢN ĐỒ THẾ GIỚI VÀ KHU VỰC
+	World: Thiết lập bản đồ thế giới
+		- Area: Khu vực
+			- ID: ID khu vực
+			- Name: Tên khu vực được hiển thị trên bản đồ
+			- IconPosX: Tọa độ X đặt
+			- IconPosY: Tọa độ X đặt
+		- Place: Thông tin bản đồ
+			- MapCode: ID bản đồ
+			- IconName: Tên Icon
+			- IconPosX: Tọa độ X đặt Icon
+			- IconPosY: Tọa độ X đặt Icon
+			- Type: Loại bản đồ (0: Tân thủ thôn, 1: Thành thị, 2: Môn phái, 3: Dã ngoại)
+		- WayPort: Thông tin đường đi đến đâu đó
+			- MapCode: ID bản đồ
+			- IconName: Tên Icon
+			- IconPosX: Tọa độ X đặt Icon
+			- IconPosY: Tọa độ X đặt Icon
+	Area: Thiết lập bản đồ khu vực
+		- ID: ID khu vực
+		- ImageFileName: Tên ảnh chứa khu vực
+		- Place: Thông tin bản đồ
+			- MapCode: ID bản đồ
+			- IconName: Tên Icon
+			- IconPosX: Tọa độ X đặt Icon
+			- IconPosY: Tọa độ X đặt Icon
+			- Type: Loại bản đồ (0: Tân thủ thôn, 1: Thành thị, 2: Môn phái, 3: Dã ngoại)
+		- WayPort: Thông tin đường đi đến đâu đó
+			- MapCode: ID bản đồ
+			- IconPosX: Tọa độ X đặt Icon
+			- IconPosY: Tọa độ X đặt Icon
+	
+-->
+<WorldMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!-- Bản đồ thế giới -->
+	<World ImageFileName="WorldMap_World">
+		<Area ID="1" Name="Kim" PosX="610" PosY="500" />
+		<Place MapCode="3" IconName="ICON-THE-GIOI" IconPosX="500" IconPosY="500" Type="0" />
+		<Place MapCode="23" IconName="ICON-THE-GIOI" IconPosX="650" IconPosY="600" Type="1" />
+		<Place MapCode="1" IconName="ICON-THE-GIOI" IconPosX="700" IconPosY="700" Type="0" />
+		<Area ID="2" Name="Mông Cổ" PosX="400" PosY="730" />
+		<Area ID="2" Name="Tây Hạ" PosX="350" PosY="620" />
+		<Place MapCode="2" IconName="ICON-THE-GIOI" IconPosX="220" IconPosY="720" Type="0" />
+		<Place MapCode="24" IconName="ICON-THE-GIOI" IconPosX="380" IconPosY="600" Type="1" />
+		<Area ID="3" Name="Tây Tống" PosX="580" PosY="300" />
+		<Place MapCode="5" IconName="ICON-THE-GIOI" IconPosX="380" IconPosY="330" Type="0" />
+		<Place MapCode="8" IconName="ICON-THE-GIOI" IconPosX="610" IconPosY="200" Type="0" />
+		<Place MapCode="27" IconName="ICON-THE-GIOI" IconPosX="360" IconPosY="420" Type="1" />
+		<Place MapCode="25" IconName="ICON-THE-GIOI" IconPosX="600" IconPosY="420" Type="1" />
+		<Area ID="4" Name="Đông Tống" PosX="830" PosY="220" />
+		<Place MapCode="4" IconName="ICON-THE-GIOI" IconPosX="800" IconPosY="470" Type="0" />
+		<Place MapCode="7" IconName="ICON-THE-GIOI" IconPosX="730" IconPosY="160" Type="0" />
+		<Place MapCode="26" IconName="ICON-THE-GIOI" IconPosX="850" IconPosY="400" Type="1" />
+		<Place MapCode="29" IconName="ICON-THE-GIOI" IconPosX="900" IconPosY="340" Type="1" />
+		<Area ID="5" Name="Đại Lý" PosX="350" PosY="150" />
+		<Place MapCode="6" IconName="ICON-THE-GIOI" IconPosX="400" IconPosY="100" Type="0" />
+		<Place MapCode="28" IconName="ICON-THE-GIOI" IconPosX="200" IconPosY="200" Type="1" />
+	</World>
+	
+	<!-- Bản đồ từng khu vực -->
+	<Area ID="1" ImageFileName="WorldMap_Area_Jin">
+		<Place MapCode="3" IconName="ICON-4" IconPosX="250" IconPosY="180" Type="0" />
+		<Place MapCode="87" IconName="ICON-7" IconPosX="100" IconPosY="250" Type="3" />
+		<Place MapCode="116" IconName="ICON-7" IconPosX="260" IconPosY="480" Type="3" />
+		<Place MapCode="40" IconName="ICON-7" IconPosX="350" IconPosY="350" Type="3" />
+		<Place MapCode="131" IconName="ICON-7" IconPosX="250" IconPosY="300" Type="3" />
+		<Place MapCode="32" IconName="ICON-7" IconPosX="300" IconPosY="70" Type="3" />
+		<Place MapCode="100" IconName="ICON-7" IconPosX="450" IconPosY="430" Type="3" />
+		<Place MapCode="107" IconName="ICON-7" IconPosX="480" IconPosY="320" Type="3" />
+		<Place MapCode="66" IconName="ICON-7" IconPosX="390" IconPosY="220" Type="3" />
+		<Place MapCode="56" IconName="ICON-7" IconPosX="470" IconPosY="120" Type="3" />
+		<Place MapCode="46" IconName="ICON-7" IconPosX="610" IconPosY="150" Type="3" />
+		<Place MapCode="95" IconName="ICON-7" IconPosX="840" IconPosY="210" Type="3" />
+		<Place MapCode="102" IconName="ICON-7" IconPosX="770" IconPosY="70" Type="3" />
+	<!--
+		<WayPort MapCode="88" IconPosX="600" IconPosY="50" />
+		<WayPort MapCode="109" IconPosX="720" IconPosY="50" />
+	-->	
+		<Place MapCode="117" IconName="ICON-7" IconPosX="1000" IconPosY="240" Type="3" />
+		<Place MapCode="125" IconName="ICON-7" IconPosX="1000" IconPosY="330" Type="3" />
+		<Place MapCode="133" IconName="ICON-7" IconPosX="1070" IconPosY="430" Type="3" />
+		<Place MapCode="110" IconName="ICON-7" IconPosX="1050" IconPosY="120" Type="3" />
+		<Place MapCode="103" IconName="ICON-7" IconPosX="920" IconPosY="100" Type="3" />
+		<Place MapCode="9" IconName="ICON-THIEU-LAM" IconPosX="720" IconPosY="250" Type="2" />
+		<Place MapCode="23" IconName="ICON-6" IconPosX="730" IconPosY="370" Type="1" />
+		<Place MapCode="86" IconName="ICON-7" IconPosX="580" IconPosY="460" Type="3" />
+		<Place MapCode="1" IconName="ICON-4" IconPosX="590" IconPosY="580" Type="0" />
+		<Place MapCode="30" IconName="ICON-7" IconPosX="450" IconPosY="700" Type="3" />
+		<Place MapCode="38" IconName="ICON-7" IconPosX="280" IconPosY="650" Type="3" />
+		<Place MapCode="47" IconName="ICON-7" IconPosX="900" IconPosY="520" Type="3" />
+		<Place MapCode="57" IconName="ICON-7" IconPosX="960" IconPosY="620" Type="3" />
+		<Place MapCode="67" IconName="ICON-7" IconPosX="980" IconPosY="720" Type="3" />
+		<Place MapCode="10" IconName="ICON-THIEN-NHAN" IconPosX="870" IconPosY="430" Type="2" />
+
+	</Area>
+	
+	<Area ID="2" ImageFileName="WorldMap_Area_MongoXiXia">
+		<Place MapCode="58" IconName="ICON-7" IconPosX="200" IconPosY="100" Type="3" />
+		<Place MapCode="68" IconName="ICON-7" IconPosX="100" IconPosY="250" Type="3" />
+		<Place MapCode="48" IconName="ICON-7" IconPosX="340" IconPosY="210" Type="3" />
+		<Place MapCode="12" IconName="ICON-CON-LUAN" IconPosX="500" IconPosY="250" Type="2" />
+		<Place MapCode="24" IconName="ICON-6" IconPosX="670" IconPosY="360" Type="1" />
+		<Place MapCode="108" IconName="ICON-7" IconPosX="770" IconPosY="260" Type="3" />
+		<Place MapCode="2" IconName="ICON-4" IconPosX="450" IconPosY="400" Type="0" />
+		<Place MapCode="94" IconName="ICON-7" IconPosX="500" IconPosY="550" Type="3" />
+		<Place MapCode="39" IconName="ICON-7" IconPosX="280" IconPosY="350" Type="3" />
+		<Place MapCode="31" IconName="ICON-7" IconPosX="250" IconPosY="450" Type="3" />
+		<Place MapCode="115" IconName="ICON-7" IconPosX="400" IconPosY="600" Type="3" />
+		<Place MapCode="124" IconName="ICON-7" IconPosX="300" IconPosY="550" Type="3" />
+		<Place MapCode="101" IconName="ICON-7" IconPosX="700" IconPosY="630" Type="3" />
+		<Place MapCode="122" IconName="ICON-7" IconPosX="1050" IconPosY="470" Type="3" />
+		<Place MapCode="11" IconName="ICON-7" IconPosX="860" IconPosY="510" Type="2" />
+		<Place MapCode="114" IconName="ICON-7" IconPosX="1010" IconPosY="580" Type="3" />
+	</Area>
+	
+	<Area ID="3" ImageFileName="WorldMap_Area_XiSong">
+		<Place MapCode="27" IconName="ICON-6" IconPosX="270" IconPosY="490" Type="1" />
+		<Place MapCode="5" IconName="ICON-4" IconPosX="370" IconPosY="370" Type="0" />
+		<Place MapCode="16" IconName="ICON-NGA-MY" IconPosX="230" IconPosY="340" Type="2" />
+		<Place MapCode="51" IconName="ICON-7" IconPosX="150" IconPosY="210" Type="3" />
+		<Place MapCode="61" IconName="ICON-7" IconPosX="90" IconPosY="310" Type="3" />
+		<Place MapCode="71" IconName="ICON-7" IconPosX="110" IconPosY="420" Type="3" />
+		<Place MapCode="90" IconName="ICON-7" IconPosX="90" IconPosY="530" Type="3" />
+		<Place MapCode="104" IconName="ICON-7" IconPosX="350" IconPosY="600" Type="3" />
+		<Place MapCode="97" IconName="ICON-7" IconPosX="170" IconPosY="640" Type="3" />
+		<Place MapCode="111" IconName="ICON-7" IconPosX="650" IconPosY="500" Type="3" />
+		<Place MapCode="127" IconName="ICON-7" IconPosX="490" IconPosY="570" Type="3" />
+		<Place MapCode="134" IconName="ICON-7" IconPosX="470" IconPosY="470" Type="3" />
+		<Place MapCode="34" IconName="ICON-7" IconPosX="480" IconPosY="290" Type="3" />
+		<Place MapCode="42" IconName="ICON-7" IconPosX="350" IconPosY="180" Type="3" />
+		<Place MapCode="118" IconName="ICON-7" IconPosX="600" IconPosY="400" Type="3" />
+		<Place MapCode="69" IconName="ICON-7" IconPosX="330" IconPosY="730" Type="3" />
+		<Place MapCode="59" IconName="ICON-7" IconPosX="540" IconPosY="700" Type="3" />
+		<Place MapCode="49" IconName="ICON-7" IconPosX="600" IconPosY="600" Type="3" />
+		<Place MapCode="14" IconName="ICON-VO-DANG" IconPosX="740" IconPosY="630" Type="2" />
+		<Place MapCode="25" IconName="ICON-6" IconPosX="890" IconPosY="660" Type="1" />
+		<Place MapCode="88" IconName="ICON-7" IconPosX="1000" IconPosY="570" Type="3" />
+		<Place MapCode="8" IconName="ICON-4" IconPosX="850" IconPosY="280" Type="0" />
+		<Place MapCode="121" IconName="ICON-7" IconPosX="670" IconPosY="300" Type="3" />
+		<Place MapCode="45" IconName="ICON-7" IconPosX="1000" IconPosY="420" Type="3" />
+		<Place MapCode="37" IconName="ICON-7" IconPosX="1050" IconPosY="290" Type="3" />
+		<Place MapCode="22" IconName="ICON-THIEN-VUONG" IconPosX="740" IconPosY="180" Type="2" />
+		<Place MapCode="137" IconName="ICON-7" IconPosX="600" IconPosY="200" Type="3" />
+		<Place MapCode="55" IconName="ICON-7" IconPosX="790" IconPosY="90" Type="3" />
+		<Place MapCode="65" IconName="ICON-7" IconPosX="1000" IconPosY="90" Type="3" />
+		<Place MapCode="75" IconName="ICON-7" IconPosX="950" IconPosY="190" Type="3" />
+	</Area>
+	
+	<Area ID="4" ImageFileName="WorldMap_Area_DongSong">
+		<Place MapCode="74" IconName="ICON-7" IconPosX="150" IconPosY="270" Type="3" />
+		<Place MapCode="64" IconName="ICON-7" IconPosX="200" IconPosY="160" Type="3" />
+		<Place MapCode="54" IconName="ICON-7" IconPosX="330" IconPosY="190" Type="3" />
+		<Place MapCode="224" IconName="ICON-MINH-GIAO" IconPosX="200" IconPosY="370" Type="2" />
+		<Place MapCode="109" IconName="ICON-7" IconPosX="120" IconPosY="500" Type="3" />
+		<Place MapCode="41" IconName="ICON-7" IconPosX="220" IconPosY="660" Type="3" />
+		<Place MapCode="70" IconName="ICON-7" IconPosX="300" IconPosY="490" Type="3" />
+		<Place MapCode="33" IconName="ICON-7" IconPosX="350" IconPosY="720" Type="3" />
+		<Place MapCode="4" IconName="ICON-4" IconPosX="460" IconPosY="700" Type="0" />
+		<Place MapCode="60" IconName="ICON-7" IconPosX="360" IconPosY="590" Type="3" />
+		<Place MapCode="50" IconName="ICON-7" IconPosX="490" IconPosY="550" Type="3" />
+		<Place MapCode="15" IconName="ICON-CAI-BANG" IconPosX="580" IconPosY="600" Type="2" />
+		<Place MapCode="26" IconName="ICON-6" IconPosX="700" IconPosY="650" Type="1" />
+		<Place MapCode="89" IconName="ICON-7" IconPosX="830" IconPosY="720" Type="3" />
+		<Place MapCode="96" IconName="ICON-7" IconPosX="840" IconPosY="600" Type="3" />
+		<Place MapCode="29" IconName="ICON-6" IconPosX="850" IconPosY="480" Type="1" />
+		<Place MapCode="92" IconName="ICON-7" IconPosX="600" IconPosY="470" Type="3" />
+		<Place MapCode="36" IconName="ICON-7" IconPosX="850" IconPosY="380" Type="3" />
+		<Place MapCode="106" IconName="ICON-7" IconPosX="450" IconPosY="430" Type="3" />
+		<Place MapCode="113" IconName="ICON-7" IconPosX="450" IconPosY="320" Type="3" />
+		<Place MapCode="7" IconName="ICON-4" IconPosX="640" IconPosY="260" Type="0" />
+		<Place MapCode="44" IconName="ICON-7" IconPosX="770" IconPosY="220" Type="3" />
+		<Place MapCode="20" IconName="ICON-NGU-DOC" IconPosX="450" IconPosY="220" Type="2" />
+		<Place MapCode="120" IconName="ICON-7" IconPosX="580" IconPosY="160" Type="3" />
+		<Place MapCode="136" IconName="ICON-7" IconPosX="670" IconPosY="80" Type="3" />
+		<Place MapCode="128" IconName="ICON-7" IconPosX="380" IconPosY="70" Type="3" />
+	</Area>
+	
+	<Area ID="5" ImageFileName="WorldMap_Area_DaLi">
+		<Place MapCode="72" IconName="ICON-7" IconPosX="130" IconPosY="140" Type="3" />
+		<Place MapCode="62" IconName="ICON-7" IconPosX="290" IconPosY="160" Type="3" />
+		<Place MapCode="52" IconName="ICON-7" IconPosX="450" IconPosY="100" Type="3" />
+		<Place MapCode="105" IconName="ICON-7" IconPosX="140" IconPosY="290" Type="3" />
+		<Place MapCode="98" IconName="ICON-7" IconPosX="150" IconPosY="390" Type="3" />
+		<Place MapCode="28" IconName="ICON-6" IconPosX="310" IconPosY="370" Type="1" />
+		<Place MapCode="91" IconName="ICON-7" IconPosX="330" IconPosY="550" Type="3" />
+		<Place MapCode="19" IconName="ICON-7" IconPosX="340" IconPosY="260" Type="2" />
+		<Place MapCode="43" IconName="ICON-7" IconPosX="450" IconPosY="360" Type="3" />
+		<Place MapCode="17" IconName="ICON-THUY-YEN" IconPosX="550" IconPosY="180" Type="2" />
+		<Place MapCode="73" IconName="ICON-7" IconPosX="670" IconPosY="390" Type="3" />
+		<Place MapCode="6" IconName="ICON-4" IconPosX="670" IconPosY="250" Type="0" />
+		<Place MapCode="63" IconName="ICON-7" IconPosX="520" IconPosY="470" Type="3" />
+		<Place MapCode="53" IconName="ICON-7" IconPosX="540" IconPosY="570" Type="3" />
+		<Place MapCode="18" IconName="ICON-DUONG-MON" IconPosX="700" IconPosY="670" Type="2" />
+		<Place MapCode="119" IconName="ICON-7" IconPosX="850" IconPosY="260" Type="3" />
+	</Area>
+</WorldMap>
