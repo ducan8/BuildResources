@@ -1,0 +1,190 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &371692937579631192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3446251665606624651}
+  m_Layer: 0
+  m_Name: face02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3446251665606624651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371692937579631192}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5494806233437226422}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4493264374827088869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5494806233437226422}
+  - component: {fileID: 8169166122543832019}
+  - component: {fileID: 3039621261269404392}
+  m_Layer: 0
+  m_Name: "\u5973\u4E3B\u89D2\u813802"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5494806233437226422
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4493264374827088869}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3446251665606624651}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &8169166122543832019
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4493264374827088869}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 91be14e0ba5171a418a8116a36bd4850, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 8771686126714023612, guid: f5bcecc62ccd6ea41a2bfbb95cc05270, type: 3}
+  m_Bones: []
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 0}
+  m_AABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_DirtyAABB: 1
+--- !u!114 &3039621261269404392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4493264374827088869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5b5172dc56b1e2409aa2481715bc243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rootBoneName: w_Bip01
+  boneNames:
+  - w_Bip01
+  - w_youhou01
+  - w_youhou02
+  - w_youhou03
+  - w_youhou04
+  - w_Bip01_Footsteps
+  - w_Bip01_Pelvis
+  - w_Bip01_Spine
+  - w_Bip01_L_Thigh
+  - w_Bip01_L_Calf
+  - w_Bip01_L_Foot
+  - w_Bip01_L_Toe0
+  - w_Bip01_Spine1
+  - w_zuoxiong
+  - w_Bip01_Neck
+  - w_Bip01_Head
+  - w_Bip01_Ponytail1
+  - w_Bip01_Ponytail11
+  - w_Bip01_Ponytail12
+  - w_toufa01
+  - w_zuojianyan
+  - w_Bip01_R_Clavicle
+  - w_Bip01_R_UpperArm
+  - w_Bip01_R_Forearm
+  - w_Bip01_R_Hand
+  - w_Bip01_R_Finger0
+  - Bone08_mirror01
+  - w_youshuixiu01
+  - w_youshuixiu02
+  - w_youshuixiu03
+  - w_Bip01_L_Clavicle
+  - w_Bip01_L_UpperArm
+  - w_Bip01_L_Forearm
+  - w_Bip01_L_Hand
+  - w_Bip01_L_Finger0
+  - Bone08
+  - w_zuoshuixiu01
+  - w_zuoshuixiu02
+  - w_zuoshuixiu03
+  - w_youxiong
+  - w_Bip01_R_Thigh
+  - w_Bip01_R_Calf
+  - w_Bip01_R_Foot
+  - w_Bip01_R_Toe0
+  - w_zuoqian01
+  - w_zuoqian02
+  - w_zuoqian03
+  - w_zuoqian04
+  - w_zuohou01
+  - w_zuohou02
+  - w_zuohou03
+  - w_zuohou04
+  - w_youqian01
+  - w_youqian02
+  - w_youqian03
+  - w_youqian04

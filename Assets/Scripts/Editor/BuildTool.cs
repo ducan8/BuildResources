@@ -111,7 +111,7 @@ public class BuildTool : MonoBehaviour
     static void AndroidBuildShared()
     {
         string folderPath = EditorUtility.OpenFolderPanel("Select Shared Assets Folder", Application.dataPath, "");
-        string outputPath = "Assets/AssetsPackage/Android/SharedAssets";
+        string outputPath = "Assets/AssetsPackage/Android/Shared";
         if (!Directory.Exists(outputPath))
         {
             Directory.CreateDirectory(outputPath);
@@ -271,7 +271,116 @@ public class BuildTool : MonoBehaviour
         }
     }
 
-    [MenuItem("Build Res/Android - Build All AssetBundles inside selected folders")]
+
+    [MenuItem("Build Res/Android - Build AssetBundle from one or many selected prefab")]
+    static void AndroidBuildResources()
+    {
+        // Lọc ra GameObject là prefab (bỏ asset khác)
+        var selectedPrefabs = Selection.GetFiltered<GameObject>(SelectionMode.Assets)
+            .Where(go => PrefabUtility.GetPrefabAssetType(go) != PrefabAssetType.NotAPrefab)
+            .Distinct()
+            .ToArray();
+
+        if (selectedPrefabs.Length == 0)
+        {
+            EditorUtility.DisplayDialog("Build AssetBundle", "Hãy chọn ít nhất 1 prefab trong Project window.", "Ok");
+            return;
+        }
+
+        if (selectedPrefabs.Length == 1)
+        {
+            var prefab = selectedPrefabs[0];
+            string defaultName = SanitizeFileName(prefab.name);
+            string path = EditorUtility.SaveFilePanel(
+                "Save Resource",
+                "",
+                defaultName,
+                "unity3d"
+            );
+
+            if (string.IsNullOrEmpty(path)) return;
+
+            BuildOnePrefabWithDependencies(prefab, path);
+            EditorUtility.DisplayDialog("Done", $"Built: {Path.GetFileName(path)}", "Ok");
+        }
+        else
+        {
+            // Nhiều prefab → chọn thư mục đích, mỗi prefab một file
+            string folder = EditorUtility.SaveFolderPanel("Select Output Folder", "", "");
+            if (string.IsNullOrEmpty(folder)) return;
+
+            int success = 0, fail = 0;
+
+            foreach (var prefab in selectedPrefabs)
+            {
+                try
+                {
+                    string fileName = SanitizeFileName(prefab.name) + ".unity3d";
+                    string outPath = Path.Combine(folder, fileName);
+
+                    // Nếu trùng tên, thêm số đếm
+                    int counter = 1;
+                    while (File.Exists(outPath))
+                    {
+                        fileName = $"{SanitizeFileName(prefab.name)}_{counter}.unity3d";
+                        outPath = Path.Combine(folder, fileName);
+                        counter++;
+                    }
+
+                    BuildOnePrefabWithDependencies(prefab, outPath);
+                    success++;
+                }
+                catch
+                {
+                    fail++;
+                }
+            }
+
+            EditorUtility.DisplayDialog("Done", $"Built {success} bundle(s), failed {fail}.", "Ok");
+        }
+    }
+
+    static void BuildOnePrefabWithDependencies(GameObject prefab, string outPath)
+    {
+        // Thu thập dependencies để chắc chắn kéo theo mesh/material/texture/anim...
+        // LƯU Ý: CollectDependencies sẽ trả về cả prefab, nhưng không sao
+        Object[] deps = EditorUtility.CollectDependencies(new Object[] { prefab });
+
+        // Một số project muốn loại bớt Editor-only assets:
+        deps = deps.Where(o => AssetDatabase.Contains(o)).ToArray();
+
+        // Tuỳ dự án bạn có thể thêm BuildAssetBundleOptions khác:
+        var options = BuildAssetBundleOptions.CompleteAssets;
+
+        // main asset = prefab, assets[] = deps
+        bool ok = BuildPipeline.BuildAssetBundle(
+            prefab,
+            deps,
+            outPath,
+            options,
+            BuildTarget.Android
+        );
+
+        if (!ok)
+        {
+            throw new System.Exception("BuildAssetBundle failed: " + outPath);
+        }
+        else
+        {
+            Debug.Log($"[AB] {prefab.name} -> {outPath} (deps: {deps.Length})");
+        }
+    }
+
+    static string SanitizeFileName(string name)
+    {
+        foreach (char c in Path.GetInvalidFileNameChars())
+            name = name.Replace(c, '_');
+        return name.Trim();
+    }
+
+
+
+[MenuItem("Build Res/Android - Build All AssetBundles inside selected folders")]
     static void AndroidBuildAllResources()
     {
         string outputFolder = EditorUtility.SaveFolderPanel("Save Resources", "Build - Android", "");
