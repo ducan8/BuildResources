@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEditor;
@@ -107,12 +108,15 @@ public class MyTools : EditorWindow
 
 
 
+[System.Serializable] class BonePack { public string prefab; public SmrEntry[] smrs; }
+[System.Serializable] class SmrEntry { public string name; public string root; public string[] bones; }
+
 
 public class SkinnedPartExtractor : EditorWindow
 {
-    string fbxPartFolder = "Assets\\test\\Player\\";
-    string outPrefabPartFolder = "Assets\\test\\Player\\";
-    string outMatFolder = "Assets\\test\\Player\\";
+    string fbxPartFolder = "Assets\\Characters\\Woman\\dress\\";
+    string outPrefabPartFolder = "Assets\\Characters\\Woman\\dress\\";
+    string outMatFolder = "Assets\\Characters\\Woman\\dress\\";
     string bundlePrefix = "characters/woman/"; // ví dụ: characters/woman/dress/dress01
     bool includeSub = true;
     bool duplicateMeshAsset = false; // bật nếu muốn tách mesh khỏi FBX
@@ -159,6 +163,7 @@ public class SkinnedPartExtractor : EditorWindow
             var partMatFolder = $"{outMatFolder}/{partName}";
             Directory.CreateDirectory(partMatFolder);
 
+            var entries = new List<SmrEntry>();
             foreach (var src in smrs)
             {
                 var child = new GameObject(src.gameObject.name);
@@ -202,10 +207,25 @@ public class SkinnedPartExtractor : EditorWindow
                 dst.sharedMaterials = newMats;
 
                 // ===== Lưu tên xương & clear bone refs =====
-                var bn = child.AddComponent<BoneNameMap>();
-                bn.rootBoneName = src.rootBone ? src.rootBone.name : "Hips";
-                bn.boneNames = src.bones.Select(b => b ? b.name : "").ToArray();
+                //var bn = child.AddComponent<BoneNameMap>();
+                //bn.rootBoneName = src.rootBone ? src.rootBone.name : "Hips";
+                //bn.boneNames = src.bones.Select(b => b ? b.name : "").ToArray();
 
+                //// đảm bảo serialize
+                //Undo.RegisterCreatedObjectUndo(child, "create part");
+                //EditorUtility.SetDirty(bn);
+                //EditorUtility.SetDirty(child);
+
+
+                // 1) GHI LẠI THÔNG TIN XƯƠNG TỪ SMR GỐC (src)
+                entries.Add(new SmrEntry
+                {
+                    name = child.name,                                         // TÊN OBJECT chứa SMR mới (để khớp)
+                    root = src.rootBone ? src.rootBone.name : "w_Bip01",       // hoặc "Hips"/"root"
+                    bones = src.bones.Select(b => b ? b.name : "").ToArray()
+                });
+
+                // 2) CLEAR THAM CHIẾU XƯƠNG Ở SMR MỚI (dst) ĐỂ PART KHÔNG DÍNH FBX
                 dst.rootBone = null;
                 dst.bones = new Transform[0];
 
@@ -214,9 +234,17 @@ public class SkinnedPartExtractor : EditorWindow
                 dst.skinnedMotionVectors = true;
             }
 
+            var pack = new BonePack { prefab = partName, smrs = entries.ToArray() };
+            var json = JsonUtility.ToJson(pack, true);
+
             var prefabPath = $"{outPrefabPartFolder}/{partName}.prefab";
             prefabPath = AssetDatabase.GenerateUniqueAssetPath(prefabPath);
             PrefabUtility.SaveAsPrefabAsset(root, prefabPath);
+
+            // LƯU JSON CẠNH PREFAB
+            var jsonPath = prefabPath.Replace(".prefab", ".bones.json");
+            System.IO.File.WriteAllText(jsonPath, json);
+            AssetDatabase.ImportAsset(jsonPath);                                // để Unity nhận TextAsset
 
             var importer = AssetImporter.GetAtPath(prefabPath);
             var ab = GuessBundleNameFromPath(prefabPath, bundlePrefix);

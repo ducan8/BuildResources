@@ -107,126 +107,126 @@ public class BuildTool : MonoBehaviour
         }
     }
 
-    [MenuItem("Build Res/Android - Build AssetBundle for shared assets")]
-    static void AndroidBuildShared()
-    {
-        string folderPath = EditorUtility.OpenFolderPanel("Select Shared Assets Folder", Application.dataPath, "");
-        string outputPath = "Assets/AssetsPackage/Android/Shared";
-        if (!Directory.Exists(outputPath))
-        {
-            Directory.CreateDirectory(outputPath);
-        }
+    //[MenuItem("Build Res/Android - Build AssetBundle for shared assets")]
+    //static void AndroidBuildShared()
+    //{
+    //    string folderPath = EditorUtility.OpenFolderPanel("Select Shared Assets Folder", Application.dataPath, "");
+    //    string outputPath = "Assets/AssetsPackage/Android/Shared";
+    //    if (!Directory.Exists(outputPath))
+    //    {
+    //        Directory.CreateDirectory(outputPath);
+    //    }
 
-        string[] assetPaths = Directory.GetFiles(folderPath, "*", SearchOption.AllDirectories)
-        .Where(path => !path.EndsWith(".meta") && !Directory.Exists(path))
-        .ToArray();
+    //    string[] assetPaths = Directory.GetFiles(folderPath, "*", SearchOption.AllDirectories)
+    //    .Where(path => !path.EndsWith(".meta") && !Directory.Exists(path))
+    //    .ToArray();
 
-        string projectPath = Application.dataPath.Replace("Assets", "");
-        Debug.Log("projectPath: " + projectPath);
-        foreach (string assetPath in assetPaths)
-        {
-            string relativePath = assetPath.Replace("\\", "/").Replace(projectPath, "");
-            Debug.Log("relativePath: " + relativePath);
-            string bundleName = GetBundleName(relativePath, "Assets/Maps/Shared/Prefabs Objects/");
-            var importer = AssetImporter.GetAtPath(relativePath);
-            Debug.Log("importer: " + importer);
-            if (importer != null)
-            {
-                importer.assetBundleName = bundleName.ToLower();
-            }
-            else
-            {
-                Debug.LogWarning($"Không thể lấy AssetImporter cho asset: {relativePath}");
-            }
-        }
+    //    string projectPath = Application.dataPath.Replace("Assets", "");
+    //    Debug.Log("projectPath: " + projectPath);
+    //    foreach (string assetPath in assetPaths)
+    //    {
+    //        string relativePath = assetPath.Replace("\\", "/").Replace(projectPath, "");
+    //        Debug.Log("relativePath: " + relativePath);
+    //        string bundleName = GetBundleName(relativePath, "Assets/Maps/Shared/Prefabs Objects/");
+    //        var importer = AssetImporter.GetAtPath(relativePath);
+    //        Debug.Log("importer: " + importer);
+    //        if (importer != null)
+    //        {
+    //            importer.assetBundleName = bundleName.ToLower();
+    //        }
+    //        else
+    //        {
+    //            Debug.LogWarning($"Không thể lấy AssetImporter cho asset: {relativePath}");
+    //        }
+    //    }
 
-        string[] allBundleNames = AssetDatabase.GetAllAssetBundleNames();
-        Debug.Log("Bundle count: " + allBundleNames.Length);
+    //    string[] allBundleNames = AssetDatabase.GetAllAssetBundleNames();
+    //    Debug.Log("Bundle count: " + allBundleNames.Length);
 
-        AssetBundleManifest manifest = BuildPipeline.BuildAssetBundles(outputPath, BuildAssetBundleOptions.None, BuildTarget.Android);
-        Debug.Log("manifest: " + manifest);
+    //    AssetBundleManifest manifest = BuildPipeline.BuildAssetBundles(outputPath, BuildAssetBundleOptions.None, BuildTarget.Android);
+    //    Debug.Log("manifest: " + manifest);
 
-    }
+    //}
 
-    static string GetBundleName(string fullPath, string rootPath)
-    {
-        Debug.Log($"Full path: {fullPath}, Root path: {rootPath}");
-        string relativePath = fullPath.Replace(rootPath, "").Replace("(Clone)", "");
-        string withoutExt = Path.ChangeExtension(relativePath, null);
-        Debug.Log($"Bundle name: {withoutExt.ToLower()}");
-        return withoutExt;
-    }
+    //static string GetBundleName(string fullPath, string rootPath)
+    //{
+    //    Debug.Log($"Full path: {fullPath}, Root path: {rootPath}");
+    //    string relativePath = fullPath.Replace(rootPath, "").Replace("(Clone)", "");
+    //    string withoutExt = Path.ChangeExtension(relativePath, null);
+    //    Debug.Log($"Bundle name: {withoutExt.ToLower()}");
+    //    return withoutExt;
+    //}
 
-    [MenuItem("Build Res/Android - Build AssetBundle for selected map")]
-    static void AndroidBuildMap()
-    {
-        string folderPath = EditorUtility.OpenFolderPanel("Select Map Folder", Application.dataPath, "");
-        if (string.IsNullOrEmpty(folderPath)) return;
+    //[MenuItem("Build Res/Android - Build AssetBundle for selected map")]
+    //static void AndroidBuildMap()
+    //{
+    //    string folderPath = EditorUtility.OpenFolderPanel("Select Map Folder", Application.dataPath, "");
+    //    if (string.IsNullOrEmpty(folderPath)) return;
 
-        string outputPath = "Assets/AssetsPackage/Android/Maps";
-        if (!Directory.Exists(outputPath))
-        {
-            Directory.CreateDirectory(outputPath);
-        }
+    //    string outputPath = "Assets/AssetsPackage/Android/Maps";
+    //    if (!Directory.Exists(outputPath))
+    //    {
+    //        Directory.CreateDirectory(outputPath);
+    //    }
 
-        string[] assetPaths = Directory.GetFiles(folderPath, "*", SearchOption.AllDirectories)
-            .Where(path => !path.EndsWith(".meta") && !Directory.Exists(path))
-            .ToArray();
+    //    string[] assetPaths = Directory.GetFiles(folderPath, "*", SearchOption.AllDirectories)
+    //        .Where(path => !path.EndsWith(".meta") && !Directory.Exists(path))
+    //        .ToArray();
 
-        foreach (string assetPath in assetPaths)
-        {
-            // Chuyển path tuyệt đối thành path tương đối với Assets
-            string relativePath = "Assets" + assetPath.Replace(Application.dataPath, "").Replace("\\", "/");
+    //    foreach (string assetPath in assetPaths)
+    //    {
+    //        // Chuyển path tuyệt đối thành path tương đối với Assets
+    //        string relativePath = "Assets" + assetPath.Replace(Application.dataPath, "").Replace("\\", "/");
 
-            string bundleName = null;
-            // Gán assetBundleName theo tên folder cha
-            if (relativePath.Contains("atlastileshader"))
-            {
-                Debug.Log("Found shader: " + relativePath);
-                string shaderName = Path.GetFileNameWithoutExtension(relativePath);
-                bundleName = $"shader_{shaderName.ToLower()}";
-            }
-            else
-            {
-                // Mặc định bundle name theo cấu trúc thư mục
-                bundleName = GetBundleName(relativePath, folderPath + "/");
-                Debug.Log($"Default bundle name: {bundleName}");
-            }
-            Debug.Log($"bundle name: {bundleName}");
-            var importer = AssetImporter.GetAtPath(relativePath);
-            if (importer != null)
-            {
-                importer.assetBundleName = bundleName.ToLower();
-                Debug.Log($"Set bundle name: {bundleName.ToLower()} for asset: {relativePath}");
-            }
-            else
-            {
-                Debug.LogWarning($"Không thể lấy AssetImporter cho asset: {relativePath}");
-            }
-        }
+    //        string bundleName = null;
+    //        // Gán assetBundleName theo tên folder cha
+    //        if (relativePath.Contains("atlastileshader"))
+    //        {
+    //            Debug.Log("Found shader: " + relativePath);
+    //            string shaderName = Path.GetFileNameWithoutExtension(relativePath);
+    //            bundleName = $"shader_{shaderName.ToLower()}";
+    //        }
+    //        else
+    //        {
+    //            // Mặc định bundle name theo cấu trúc thư mục
+    //            bundleName = GetBundleName(relativePath, folderPath + "/");
+    //            Debug.Log($"Default bundle name: {bundleName}");
+    //        }
+    //        Debug.Log($"bundle name: {bundleName}");
+    //        var importer = AssetImporter.GetAtPath(relativePath);
+    //        if (importer != null)
+    //        {
+    //            importer.assetBundleName = bundleName.ToLower();
+    //            Debug.Log($"Set bundle name: {bundleName.ToLower()} for asset: {relativePath}");
+    //        }
+    //        else
+    //        {
+    //            Debug.LogWarning($"Không thể lấy AssetImporter cho asset: {relativePath}");
+    //        }
+    //    }
 
         //AssetDatabase.RemoveUnusedAssetBundleNames();
 
         // Build AssetBundle
-        AssetBundleManifest manifest = BuildPipeline.BuildAssetBundles(outputPath, BuildAssetBundleOptions.None, BuildTarget.Android);
-        //Debug.Log("Build manifest: " + (manifest != null ? "Success" : "Failed"));
-        if (manifest != null)
-        {
-            string[] bundleNames = manifest.GetAllAssetBundles();
-            foreach (string bundleName in bundleNames)
-            {
-                string oldPath = Path.Combine(outputPath, bundleName);
-                string newPath = oldPath + ".unity3d";
+    //    AssetBundleManifest manifest = BuildPipeline.BuildAssetBundles(outputPath, BuildAssetBundleOptions.None, BuildTarget.Android);
+    //    //Debug.Log("Build manifest: " + (manifest != null ? "Success" : "Failed"));
+    //    if (manifest != null)
+    //    {
+    //        string[] bundleNames = manifest.GetAllAssetBundles();
+    //        foreach (string bundleName in bundleNames)
+    //        {
+    //            string oldPath = Path.Combine(outputPath, bundleName);
+    //            string newPath = oldPath + ".unity3d";
 
-                // Đổi tên nếu chưa có .unity3d
-                if (File.Exists(oldPath) && !File.Exists(newPath))
-                {
-                    File.Move(oldPath, newPath);
-                    //Debug.Log($"Renamed {bundleName} to {bundleName}.unity3d");
-                }
-            }
-        }
-    }
+    //            // Đổi tên nếu chưa có .unity3d
+    //            if (File.Exists(oldPath) && !File.Exists(newPath))
+    //            {
+    //                File.Move(oldPath, newPath);
+    //                //Debug.Log($"Renamed {bundleName} to {bundleName}.unity3d");
+    //            }
+    //        }
+    //    }
+    //}
 
 
     [MenuItem("Build Res/Android - Build AssetBundle from selected")]
@@ -272,66 +272,61 @@ public class BuildTool : MonoBehaviour
     }
 
 
-    [MenuItem("Build Res/Android - Build AssetBundle from one or many selected prefab")]
-    static void AndroidBuildResources()
+    // build asset bundle từ 1 hoặc nhiều asset (không giới hạn GameObject)
+    [MenuItem("Build Res/Android - Build AssetBundle from 1 or many asset")]
+    static void AndroidBuildResource_AnyAsset()
     {
-        // Lọc ra GameObject là prefab (bỏ asset khác)
-        var selectedPrefabs = Selection.GetFiltered<GameObject>(SelectionMode.Assets)
-            .Where(go => PrefabUtility.GetPrefabAssetType(go) != PrefabAssetType.NotAPrefab)
-            .Distinct()
-            .ToArray();
+        // Lấy toàn bộ asset (không giới hạn GameObject)
+        var selection = Selection.GetFiltered<Object>(SelectionMode.Assets)
+                                 .Where(IsBuildableAsset)
+                                 .Distinct()
+                                 .ToArray();
 
-        if (selectedPrefabs.Length == 0)
+        if (selection.Length == 0)
         {
-            EditorUtility.DisplayDialog("Build AssetBundle", "Hãy chọn ít nhất 1 prefab trong Project window.", "Ok");
+            EditorUtility.DisplayDialog("Build AssetBundle", "Hãy chọn ít nhất 1 asset hợp lệ trong Project window (prefab, animation clip, controller, material...)", "Ok");
             return;
         }
 
-        if (selectedPrefabs.Length == 1)
+        if (selection.Length == 1)
         {
-            var prefab = selectedPrefabs[0];
-            string defaultName = SanitizeFileName(prefab.name);
-            string path = EditorUtility.SaveFilePanel(
-                "Save Resource",
-                "",
-                defaultName,
-                "unity3d"
-            );
-
+            var asset = selection[0];
+            string defaultName = SanitizeFileName(asset.name);
+            string path = EditorUtility.SaveFilePanel("Save Resource", "", defaultName, "unity3d");
             if (string.IsNullOrEmpty(path)) return;
 
-            BuildOnePrefabWithDependencies(prefab, path);
+            BuildOneAssetWithDependencies(asset, path);
             EditorUtility.DisplayDialog("Done", $"Built: {Path.GetFileName(path)}", "Ok");
         }
         else
         {
-            // Nhiều prefab → chọn thư mục đích, mỗi prefab một file
             string folder = EditorUtility.SaveFolderPanel("Select Output Folder", "", "");
             if (string.IsNullOrEmpty(folder)) return;
 
             int success = 0, fail = 0;
 
-            foreach (var prefab in selectedPrefabs)
+            foreach (var asset in selection)
             {
                 try
                 {
-                    string fileName = SanitizeFileName(prefab.name) + ".unity3d";
+                    string fileName = SanitizeFileName(asset.name) + ".unity3d";
                     string outPath = Path.Combine(folder, fileName);
 
-                    // Nếu trùng tên, thêm số đếm
+                    // Xử lý trùng tên
                     int counter = 1;
                     while (File.Exists(outPath))
                     {
-                        fileName = $"{SanitizeFileName(prefab.name)}_{counter}.unity3d";
+                        fileName = $"{SanitizeFileName(asset.name)}_{counter}.unity3d";
                         outPath = Path.Combine(folder, fileName);
                         counter++;
                     }
 
-                    BuildOnePrefabWithDependencies(prefab, outPath);
+                    BuildOneAssetWithDependencies(asset, outPath);
                     success++;
                 }
-                catch
+                catch (System.Exception ex)
                 {
+                    Debug.LogError($"[AB] Fail: {asset.name} -> {ex.Message}");
                     fail++;
                 }
             }
@@ -340,21 +335,35 @@ public class BuildTool : MonoBehaviour
         }
     }
 
-    static void BuildOnePrefabWithDependencies(GameObject prefab, string outPath)
+    static void BuildOneAssetWithDependencies(Object mainAsset, string outPath)
     {
-        // Thu thập dependencies để chắc chắn kéo theo mesh/material/texture/anim...
-        // LƯU Ý: CollectDependencies sẽ trả về cả prefab, nhưng không sao
-        Object[] deps = EditorUtility.CollectDependencies(new Object[] { prefab });
+        // Thu thập dependencies (kéo theo clip, texture, mesh, materials, controller…)
+        Object[] deps = EditorUtility.CollectDependencies(new Object[] { mainAsset });
 
-        // Một số project muốn loại bớt Editor-only assets:
-        deps = deps.Where(o => AssetDatabase.Contains(o)).ToArray();
+        // Giữ lại những asset thật sự thuộc Project, bỏ script, editor-only, null
+        deps = deps.Where(o =>
+        {
+            if (o == null) return false;
+            if (!AssetDatabase.Contains(o)) return false;
 
-        // Tuỳ dự án bạn có thể thêm BuildAssetBundleOptions khác:
+            // Loại script
+            if (o is MonoScript) return false;
+
+            // Loại folder (DefaultAsset có thể là folder)
+            string p = AssetDatabase.GetAssetPath(o);
+            if (string.IsNullOrEmpty(p)) return false;
+            if (AssetDatabase.IsValidFolder(p)) return false;
+
+            // Loại asset trong thư mục Editor
+            if (p.Contains("/Editor/")) return false;
+
+            return true;
+        }).ToArray();
+
         var options = BuildAssetBundleOptions.CompleteAssets;
 
-        // main asset = prefab, assets[] = deps
         bool ok = BuildPipeline.BuildAssetBundle(
-            prefab,
+            mainAsset,   // main asset có thể là Prefab, AnimationClip, AnimatorController, Material, v.v.
             deps,
             outPath,
             options,
@@ -362,13 +371,29 @@ public class BuildTool : MonoBehaviour
         );
 
         if (!ok)
-        {
             throw new System.Exception("BuildAssetBundle failed: " + outPath);
-        }
-        else
-        {
-            Debug.Log($"[AB] {prefab.name} -> {outPath} (deps: {deps.Length})");
-        }
+
+        Debug.Log($"[AB] {mainAsset.name} -> {outPath} (deps: {deps.Length})");
+    }
+
+    static bool IsBuildableAsset(Object obj)
+    {
+        if (obj == null) return false;
+
+        // Không build script hoặc asset ảo
+        if (obj is MonoScript) return false;
+
+        string path = AssetDatabase.GetAssetPath(obj);
+        if (string.IsNullOrEmpty(path)) return false;
+
+        // Bỏ folder
+        if (AssetDatabase.IsValidFolder(path)) return false;
+
+        // Có thể bỏ luôn Editor-only nếu muốn
+        if (path.Contains("/Editor/")) return false;
+
+        // Còn lại: ok (Prefab, AnimationClip, AnimatorController, Material, Texture, FBX sub-asset, Shader, etc.)
+        return true;
     }
 
     static string SanitizeFileName(string name)
@@ -378,22 +403,125 @@ public class BuildTool : MonoBehaviour
         return name.Trim();
     }
 
-
-
-[MenuItem("Build Res/Android - Build All AssetBundles inside selected folders")]
+    [MenuItem("Build Res/Android - Build All AssetBundles inside selected folders")]
     static void AndroidBuildAllResources()
     {
-        string outputFolder = EditorUtility.SaveFolderPanel("Save Resources", "Build - Android", "");
-        if (!string.IsNullOrEmpty(outputFolder))
+        // Chọn thư mục trong Project window (có thể chọn nhiều)
+        var selected = Selection.GetFiltered<Object>(SelectionMode.Assets)
+                                .Where(o => !string.IsNullOrEmpty(AssetDatabase.GetAssetPath(o)))
+                                .ToArray();
+        if (selected.Length == 0)
         {
-            Object[] selectedAssets = Selection.objects;
-            foreach (Object asset in selectedAssets)
+            EditorUtility.DisplayDialog("Build AssetBundle", "Hãy chọn ít nhất 1 folder trong Project window.", "OK");
+            return;
+        }
+
+        string outputFolder = EditorUtility.SaveFolderPanel("Save Resources", "Build - Android", "");
+        if (string.IsNullOrEmpty(outputFolder)) return;
+
+        int total = 0, okCnt = 0, failCnt = 0;
+
+        foreach (var sel in selected)
+        {
+            string selPath = AssetDatabase.GetAssetPath(sel);
+            if (!AssetDatabase.IsValidFolder(selPath))
             {
-                Object[] subAssets = BuildTool.GetAssetsFromPath<Object>(AssetDatabase.GetAssetPath(asset));
-                BuildPipeline.BuildAssetBundle(asset, subAssets, outputFolder + "/" + asset.name + ".unity3d", BuildAssetBundleOptions.CompleteAssets, BuildTarget.Android);
+                // Bỏ qua asset lẻ, chỉ nhận folder
+                continue;
+            }
+
+            total++;
+            string bundleName = SanitizeFileName(Path.GetFileName(selPath)) + ".unity3d";
+            string outPath = Path.Combine(outputFolder, bundleName);
+
+            try
+            {
+                // 1) Gom toàn bộ asset trong folder (đệ quy) + toàn bộ sub-assets (clip nằm trong FBX, v.v.)
+                var allAssets = GetAllAssetsInFolderRecursive(selPath);
+
+                if (allAssets.Count == 0)
+                {
+                    Debug.LogWarning($"[AB] Folder rỗng: {selPath}");
+                    continue;
+                }
+
+                // 2) CollectDependencies trên TOÀN BỘ tập để kéo theo clip mà AnimatorController tham chiếu
+                Object[] deps = EditorUtility.CollectDependencies(allAssets.ToArray());
+
+                // 3) Lọc: chỉ giữ asset thật trong Project, bỏ script, folder, Editor-only
+                deps = deps.Where(IsBuildableAsset).ToArray();
+
+                // 4) Chọn 1 mainAsset (không quan trọng, vì ta đã cung cấp đầy đủ 'deps')
+                Object mainAsset = deps.FirstOrDefault() ?? allAssets[0];
+
+                // 5) Build
+                var opts = BuildAssetBundleOptions.CompleteAssets;
+                bool ok = BuildPipeline.BuildAssetBundle(mainAsset, deps, outPath, opts, BuildTarget.Android);
+                if (!ok)
+                    throw new System.Exception("BuildAssetBundle failed");
+
+                Debug.Log($"[AB] Folder '{selPath}' -> {outPath} (assets: {allAssets.Count}, deps: {deps.Length})");
+                okCnt++;
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogError($"[AB][FAIL] {selPath} -> {ex.Message}");
+                failCnt++;
             }
         }
+
+        EditorUtility.DisplayDialog("Done", $"Built {okCnt}/{total} bundle(s). Failed: {failCnt}.", "OK");
     }
+
+    // --- Helpers ---
+
+    /// <summary>
+    /// Lấy toàn bộ asset trong folder (đệ quy), bao gồm sub-assets trong cùng file (ví dụ FBX chứa nhiều AnimationClip).
+    /// </summary>
+    static List<Object> GetAllAssetsInFolderRecursive(string folderPath)
+    {
+        var results = new List<Object>();
+        var guidArray = AssetDatabase.FindAssets("", new[] { folderPath }); // rỗng = lấy tất cả
+
+        foreach (string guid in guidArray)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            if (AssetDatabase.IsValidFolder(path)) continue; // bỏ folder
+
+            // Main asset
+            var main = AssetDatabase.LoadMainAssetAtPath(path);
+            if (main != null && IsBuildableAsset(main))
+                results.Add(main);
+
+            // Sub-assets (AnimationClip trong FBX, materials embedded, v.v.)
+            var subs = AssetDatabase.LoadAllAssetsAtPath(path);
+            foreach (var sub in subs)
+            {
+                if (sub != null && IsBuildableAsset(sub))
+                    results.Add(sub);
+            }
+        }
+
+        // Loại trùng
+        return results.Distinct().ToList();
+    }
+
+
+
+    //[MenuItem("Build Res/Android - Build All AssetBundles inside selected folders")]
+    //static void AndroidBuildAllResources()
+    //{
+    //    string outputFolder = EditorUtility.SaveFolderPanel("Save Resources", "Build - Android", "");
+    //    if (!string.IsNullOrEmpty(outputFolder))
+    //    {
+    //        Object[] selectedAssets = Selection.objects;
+    //        foreach (Object asset in selectedAssets)
+    //        {
+    //            Object[] subAssets = BuildTool.GetAssetsFromPath<Object>(AssetDatabase.GetAssetPath(asset));
+    //            BuildPipeline.BuildAssetBundle(asset, subAssets, outputFolder + "/" + asset.name + ".unity3d", BuildAssetBundleOptions.CompleteAssets, BuildTarget.Android);
+    //        }
+    //    }
+    //}
 
     [MenuItem("Build Res/Android - Build All Assets inside selected folders individually (For build MAP)")]
     static void AndroidBuildAllResourcesInsideFolderIndividually()

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6661897631787506318
+--- !u!1 &2609727134332796239
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3351477780620262246}
-  - component: {fileID: 1786187050485421973}
-  - component: {fileID: 2204138839248343847}
+  - component: {fileID: 5148935855682113659}
+  - component: {fileID: 8210941458713453684}
   m_Layer: 0
   m_Name: "\u5973\u4E3B\u89D2\u65F6\u88C5\u541B\u4E34\u5929\u4E0B\u6218\u573A\u65F6\u88C5\u6C34150810"
   m_TagString: Untagged
@@ -18,28 +17,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3351477780620262246
+--- !u!4 &5148935855682113659
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6661897631787506318}
+  m_GameObject: {fileID: 2609727134332796239}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7186520451660778269}
+  m_Father: {fileID: 474700556126195555}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &1786187050485421973
+--- !u!137 &8210941458713453684
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6661897631787506318}
+  m_GameObject: {fileID: 2609727134332796239}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -53,7 +52,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7da2592f445cf0d4690312f305989835, type: 2}
+  - {fileID: 2100000, guid: 4084984bcfd4e934fa273259ab8e0028, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,7 +77,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 8639177935659605548, guid: 5cfbb714dfadc084982418ef167ac4c4, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 59b0f4dc2a4222141b0e13f4c0b9dd25, type: 2}
   m_Bones: []
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
@@ -86,77 +85,7 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_DirtyAABB: 1
---- !u!114 &2204138839248343847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6661897631787506318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5b5172dc56b1e2409aa2481715bc243, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rootBoneName: w_Bip01
-  boneNames:
-  - w_Bip01
-  - w_youqian01
-  - w_youqian02
-  - w_youqian03
-  - w_youqian04
-  - w_youhou01
-  - w_youhou02
-  - w_youhou03
-  - w_youhou04
-  - w_zuohou01
-  - w_zuohou02
-  - w_zuohou03
-  - w_zuohou04
-  - w_Bip01_Footsteps
-  - w_Bip01_Pelvis
-  - w_Bip01_Spine
-  - w_Bip01_R_Thigh
-  - w_Bip01_R_Calf
-  - w_Bip01_R_Foot
-  - w_Bip01_R_Toe0
-  - w_Bip01_Spine1
-  - w_youxiong
-  - w_Bip01_Neck
-  - w_Bip01_R_Clavicle
-  - w_Bip01_R_UpperArm
-  - w_Bip01_R_Forearm
-  - w_Bip01_R_Hand
-  - w_Bip01_R_Finger0
-  - Bone08_mirror01
-  - w_youshuixiu01
-  - w_youshuixiu02
-  - w_youshuixiu03
-  - w_Bip01_Head
-  - w_Bip01_Ponytail1
-  - w_Bip01_Ponytail11
-  - w_Bip01_Ponytail12
-  - w_toufa01
-  - w_zuojianyan
-  - w_Bip01_L_Clavicle
-  - w_Bip01_L_UpperArm
-  - w_Bip01_L_Forearm
-  - w_zuoshuixiu01
-  - w_zuoshuixiu02
-  - w_zuoshuixiu03
-  - w_Bip01_L_Hand
-  - Bone08
-  - w_Bip01_L_Finger0
-  - w_zuoxiong
-  - w_Bip01_L_Thigh
-  - w_Bip01_L_Calf
-  - w_Bip01_L_Foot
-  - w_Bip01_L_Toe0
-  - w_zuoqian01
-  - w_zuoqian02
-  - w_zuoqian03
-  - w_zuoqian04
---- !u!1 &7127876875666492162
+--- !u!1 &3337600685771816838
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,7 +93,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7186520451660778269}
+  - component: {fileID: 474700556126195555}
   m_Layer: 0
   m_Name: dress01
   m_TagString: Untagged
@@ -172,19 +101,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7186520451660778269
+--- !u!4 &474700556126195555
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7127876875666492162}
+  m_GameObject: {fileID: 3337600685771816838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3351477780620262246}
+  - {fileID: 5148935855682113659}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

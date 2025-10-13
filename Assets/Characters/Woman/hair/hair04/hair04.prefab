@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2381255850580431084
+--- !u!1 &6961167335678468028
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5232696594538107830}
-  - component: {fileID: 6376546989787581920}
-  - component: {fileID: 5866578075273049749}
+  - component: {fileID: 3535038371053772170}
+  m_Layer: 0
+  m_Name: hair04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3535038371053772170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6961167335678468028}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4010781495806559927}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9145888303293423530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4010781495806559927}
+  - component: {fileID: 2482242555675701400}
+  - component: {fileID: 1151658374633478982}
   m_Layer: 0
   m_Name: "\u7537\u4E3B\u89D2\u5934\u53D105"
   m_TagString: Untagged
@@ -18,28 +50,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5232696594538107830
+--- !u!4 &4010781495806559927
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2381255850580431084}
+  m_GameObject: {fileID: 9145888303293423530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7375040342713901209}
+  m_Father: {fileID: 3535038371053772170}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &6376546989787581920
+--- !u!137 &2482242555675701400
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2381255850580431084}
+  m_GameObject: {fileID: 9145888303293423530}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -53,7 +85,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d918c68f605547a4fbf335044b753ba1, type: 2}
+  - {fileID: 2100000, guid: 4e5efaf8ffdedbd42b182910d645f227, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,7 +110,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 936521481729118343, guid: 97224f52a3c12084cbf7b06450f606ba, type: 3}
+  m_Mesh: {fileID: 4300000, guid: c679fa99af57eec44a24b9a833b83198, type: 2}
   m_Bones: []
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
@@ -86,13 +118,13 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_DirtyAABB: 1
---- !u!114 &5866578075273049749
+--- !u!114 &1151658374633478982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2381255850580431084}
+  m_GameObject: {fileID: 9145888303293423530}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5b5172dc56b1e2409aa2481715bc243, type: 3}
@@ -101,90 +133,58 @@ MonoBehaviour:
   rootBoneName: w_Bip01
   boneNames:
   - w_Bip01
-  - w_youqian01
-  - w_youqian02
-  - w_youqian03
-  - w_youqian04
-  - w_Bip01_Footsteps
+  - w_cegu01
+  - w_cegu02
+  - w_cegu03
   - w_Bip01_Pelvis
   - w_Bip01_Spine
   - w_Bip01_Spine1
-  - w_zuoxiong
+  - w_youxiong
   - w_Bip01_Neck
-  - w_Bip01_Head
-  - w_Bip01_Ponytail1
-  - w_Bip01_Ponytail11
-  - w_Bip01_Ponytail12
-  - w_toufa01
-  - w_zuojianyan
+  - w_Bip01_R_Clavicle
+  - w_Bip01_R_UpperArm
+  - w_Bip01_R_Forearm
+  - w_Bip01_R_Hand
+  - w_Bip01_R_Finger0
+  - Bone08_mirror01
   - w_Bip01_L_Clavicle
   - w_Bip01_L_UpperArm
   - w_Bip01_L_Forearm
   - w_Bip01_L_Hand
   - w_Bip01_L_Finger0
   - Bone08
-  - w_zuoshuixiu01
-  - w_zuoshuixiu02
-  - w_zuoshuixiu03
-  - w_Bip01_R_Clavicle
-  - w_Bip01_R_UpperArm
-  - w_Bip01_R_Forearm
-  - w_Bip01_R_Hand
-  - Bone08_mirror01
-  - w_Bip01_R_Finger0
-  - w_youshuixiu01
-  - w_youshuixiu02
-  - w_youshuixiu03
-  - w_youxiong
+  - w_Bip01_Head
+  - w_zuojianyan
+  - w_Bip01_Ponytail1
+  - w_Bip01_Ponytail11
+  - w_Bip01_Ponytail12
+  - w_zuoxiong
   - w_Bip01_L_Thigh
   - w_Bip01_L_Calf
   - w_Bip01_L_Foot
   - w_Bip01_L_Toe0
+  - w_zuoqianqun
+  - w_zuohouqun
   - w_Bip01_R_Thigh
   - w_Bip01_R_Calf
+  - w_youhouqun
   - w_Bip01_R_Foot
   - w_Bip01_R_Toe0
-  - w_zuoqian01
-  - w_zuoqian02
-  - w_zuoqian03
-  - w_zuoqian04
-  - w_youhou01
-  - w_youhou02
-  - w_youhou03
-  - w_youhou04
+  - w_youqianqun
   - w_zuohou01
   - w_zuohou02
   - w_zuohou03
   - w_zuohou04
---- !u!1 &5989994016336335507
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7375040342713901209}
-  m_Layer: 0
-  m_Name: hair04
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7375040342713901209
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5989994016336335507}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5232696594538107830}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  - w_youqian01
+  - w_youqian02
+  - w_youqian03
+  - w_youqian04
+  - w_youhou01
+  - w_youhou02
+  - w_youhou03
+  - w_youhou04
+  - w_zuoqian01
+  - w_zuoqian02
+  - w_zuoqian03
+  - w_zuoqian04
+  - w_Bip01_Footsteps
