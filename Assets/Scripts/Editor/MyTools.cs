@@ -279,3 +279,88 @@ public class SkinnedPartExtractor : EditorWindow
         return name.Trim();
     }
 }
+
+
+
+[CreateAssetMenu(menuName = "TL/Dali/WCollisionData")]
+public class WCollisionData : ScriptableObject
+{
+    public Dictionary<Vector2Int, List<WcTri>> cells = new();
+}
+[System.Serializable] public struct WcTri { public Vector3 v1, v2, v3; }
+
+public static class DaliWCollisionImporter
+{
+    [MenuItem("TL/Dali/Import WCollision")]
+    public static void Import()
+    {
+        string path = EditorUtility.OpenFilePanel("dali.WCollision", "", "");
+        if (string.IsNullOrEmpty(path)) return;
+
+        var data = ScriptableObject.CreateInstance<WCollisionData>();
+        using var br = new BinaryReader(File.OpenRead(path));
+        uint version = br.ReadUInt32();        // theo BuildingCollisionMng.cpp
+        int posCount = br.ReadInt32();
+        for (int i = 0; i < posCount; i++)
+        {
+            int ix = br.ReadInt32(); int iz = br.ReadInt32();
+            int triCount = br.ReadInt32();
+            var key = new Vector2Int(ix, iz);
+            var list = new List<WcTri>(triCount);
+            for (int t = 0; t < triCount; t++)
+            {
+                var tri = new WcTri
+                {
+                    v1 = new Vector3(br.ReadSingle(), br.ReadSingle(), br.ReadSingle()),
+                    v2 = new Vector3(br.ReadSingle(), br.ReadSingle(), br.ReadSingle()),
+                    v3 = new Vector3(br.ReadSingle(), br.ReadSingle(), br.ReadSingle()),
+                };
+                list.Add(tri);
+            }
+            data.cells[key] = list;
+        }
+        AssetDatabase.CreateAsset(data, "Assets/Maps/dali/Dali_WCollision.asset");
+        AssetDatabase.SaveAssets();
+        Debug.Log($"WCollision imported: {data.cells.Count} cells");
+    }
+}
+
+[CreateAssetMenu(menuName = "TL/Dali/RegionData")]
+public class RegionData : ScriptableObject
+{
+    public List<Reg> regions = new();
+}
+[System.Serializable]
+public class Reg
+{
+    public int id;
+    public int passLevel;
+    public Vector2[] pts; // theo thứ tự đỉnh trong file
+}
+
+public static class DaliRegionImporter
+{
+    [MenuItem("TL/Dali/Import Region")]
+    public static void Import()
+    {
+        string path = EditorUtility.OpenFilePanel("dali.Region", "", "");
+        if (string.IsNullOrEmpty(path)) return;
+
+        var data = ScriptableObject.CreateInstance<RegionData>();
+        using var br = new BinaryReader(File.OpenRead(path));
+        int version = br.ReadInt32();               // theo Scene/Region.cpp
+        int count = br.ReadInt32();                 // số region
+        for (int i = 0; i < count; i++)
+        {
+            int id = br.ReadInt32();
+            int pass = br.ReadInt32();
+            int n = br.ReadInt32();
+            var pts = new Vector2[n];
+            for (int k = 0; k < n; k++) pts[k] = new Vector2(br.ReadSingle(), br.ReadSingle());
+            data.regions.Add(new Reg { id = id, passLevel = pass, pts = pts });
+        }
+        AssetDatabase.CreateAsset(data, "Assets/Maps/dali/Dali_Region.asset");
+        AssetDatabase.SaveAssets();
+        Debug.Log($"Region imported: {data.regions.Count} polygons");
+    }
+}
