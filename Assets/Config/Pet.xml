@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	DANH SÁCH PET
+	- ID: ID (dùng để tham chiếu tới khi tạo Pet)
+	- ResID: ID Res
+	- Name: Tên của Pet
+	- Skills: Danh sách ID kỹ năng sẵn có khi tạo ra, ngăn cách bởi dấu ;
+	- HP: Sinh lực cơ bản
+	- Str: Số điểm sức mạnh có khi tạo ra
+	- Dex: Số điểm thân pháp có khi tạo ra
+	- Sta: Số điểm ngoại công có khi tạo ra
+	- Int: Số điểm nội công có khi tạo ra
+	- StrToPAtk: 1 điểm sức tương đương bao nhiêu điểm vật công ngoại
+	- DexToHit: 1 điểm thân tương đương bao nhiêu điểm chính xác
+	- DexToDodge: 1 điểm thân tương đương bao nhiêu điểm né tránh
+	- StaToHP: 1 điểm ngoại tương đương bao nhiêu sinh lực
+	- IntToMAtk: 1 điểm nội tương đương bao nhiêu điểm vật công nội
+	- StrPerLevel: Số điểm sức cộng thêm mỗi khi lên cấp
+	- DexPerLevel: Số điểm thân cộng thêm mỗi khi lên cấp
+	- StaPerLevel: Số điểm ngoại cộng thêm mỗi khi lên cấp
+	- IntPerLevel: Số điểm nội cộng thêm mỗi khi lên cấp
+-->
+<Pets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!--Rương Pet Nhận Hoàn Thành Nhiệm Vụ -->
+	<Pet ID="2009" ResID="ani019" Name="Hổ Vàng" TypeDesc="Sinh Khí" Skills="" HP="3000000" Str="1" Dex="1" Sta="15" Int="1" StrToPAtk="1" DexToHit="1" DexToDodge="1" StaToHP="3" IntToMAtk="1" StrPerLevel="1" DexPerLevel="1" StaPerLevel="3" IntPerLevel="1" />
+	<Pet ID="2010" ResID="ani018" Name="Gấu Con" TypeDesc="Cân Bằng" Skills="" HP="3000000" Str="8" Dex="8" Sta="8" Int="8" StrToPAtk="2" DexToHit="2" DexToDodge="2" StaToHP="2" IntToMAtk="2" StrPerLevel="2" DexPerLevel="2" StaPerLevel="2" IntPerLevel="2" />
+	<Pet ID="2202" ResID="ani005" Name="Khỉ Hoang Con" TypeDesc="Nhanh Nhẹn" Skills="" HP="3000000" Str="1" Dex="15" Sta="10" Int="1" StrToPAtk="1" DexToHit="3" DexToDodge="3" StaToHP="1" IntToMAtk="1" StrPerLevel="1" DexPerLevel="3" StaPerLevel="1" IntPerLevel="1" />
+	<Pet ID="2051" ResID="enemy100" Name="Tham Khách" TypeDesc="Nhanh Nhẹn" Skills="" HP="3000000" Str="1" Dex="15" Sta="10" Int="1" StrToPAtk="1" DexToHit="3" DexToDodge="3" StaToHP="1" IntToMAtk="1" StrPerLevel="1" DexPerLevel="3" StaPerLevel="1" IntPerLevel="1" />
+	<Pet ID="6156" ResID="enemy101" Name="Cơ Quan Nhân Thô" TypeDesc="Cân Bằng" Skills="" HP="3000000" Str="8" Dex="8" Sta="8" Int="8" StrToPAtk="2" DexToHit="2" DexToDodge="2" StaToHP="2" IntToMAtk="2" StrPerLevel="2" DexPerLevel="2" StaPerLevel="2" IntPerLevel="2" />
+	<Pet ID="3159" ResID="enemy104" Name="Cơ Quan Thủ Phủ" TypeDesc="Nhanh Nhẹn" Skills="" HP="3000000" Str="1" Dex="15" Sta="10" Int="1" StrToPAtk="1" DexToHit="3" DexToDodge="3" StaToHP="1" IntToMAtk="1" StrPerLevel="1" DexPerLevel="3" StaPerLevel="1" IntPerLevel="1" />
+	
+	<!-- Pet Sơ Cấp	 -->
+	<Pet ID="3291" ResID="enemy098" Name="Sấm Cốc Tặc" TypeDesc="Dũng Mãnh" Skills="" HP="3000000" Str="30" Dex="1" Sta="30" Int="1" StrToPAtk="5" DexToHit="1" DexToDodge="1" StaToHP="1" IntToMAtk="1" StrPerLevel="5" DexPerLevel="1" StaPerLevel="1" IntPerLevel="1" />
+	<Pet ID="20060" ResID="enemy113" Name="Tiếu Tử Dương" TypeDesc="Dũng Mãnh" Skills="" HP="3000000" Str="30" Dex="1" Sta="30" Int="1" StrToPAtk="5" DexToHit="1" DexToDodge="1" StaToHP="1" IntToMAtk="1" StrPerLevel="5" DexPerLevel="1" StaPerLevel="1" IntPerLevel="1" />
+	<Pet ID="2278" ResID="enemy001" Name="Lâu La Hồng Y" TypeDesc="Dũng Mãnh" Skills="" HP="3000000" Str="30" Dex="1" Sta="30" Int="1" StrToPAtk="5" DexToHit="1" DexToDodge="1" StaToHP="1" IntToMAtk="1" StrPerLevel="5" DexPerLevel="1" StaPerLevel="1" IntPerLevel="1" />
+	<Pet ID="2272" ResID="enemy165" Name="Tướng Quân Trường Ca Môn" TypeDesc="Cân Bằng" Skills="" HP="3000000" Str="15" Dex="15" Sta="15" Int="15" StrToPAtk="1" DexToHit="5" DexToDodge="5" StaToHP="1" IntToMAtk="1" StrPerLevel="1" DexPerLevel="5" StaPerLevel="5" IntPerLevel="1" />
+	<Pet ID="2051" ResID="enemy100" Name="Tham Khách" TypeDesc="Nhanh Nhẹn" Skills="" HP="300000" Str="1" Dex="30" Sta="20" Int="1" StrToPAtk="1" DexToHit="5" DexToDodge="5" StaToHP="1" IntToMAtk="1" StrPerLevel="1" DexPerLevel="5" StaPerLevel="5" IntPerLevel="1" />
+	<Pet ID="3176" ResID="enemy101" Name="Cơ Quan Nhân Thô" TypeDesc="Nhanh Nhẹn" Skills="" HP="300000" Str="1" Dex="30" Sta="30" Int="1" StrToPAtk="1" DexToHit="5" DexToDodge="5" StaToHP="1" IntToMAtk="1" StrPerLevel="1" DexPerLevel="5" StaPerLevel="5" IntPerLevel="1" />
+	<Pet ID="2212" ResID="enemy114" Name="Bạch Linh" TypeDesc="Nội Công" Skills="" HP="300000" Str="1" Dex="1" Sta="30" Int="30" StrToPAtk="1" DexToHit="1" DexToDodge="1" StaToHP="5" IntToMAtk="5" StrPerLevel="1" DexPerLevel="1" StaPerLevel="5" IntPerLevel="5" />
+</Pets>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	CẤU HÌNH PET
+	- Limitation: Giới hạn
+		- MaxCanTake: Số lượng pet tối đa có thể mang theo
+		- MaxLevel: Cấp độ tối đa
+		- MaxSkill: Số lượng kỹ năng tối đa
+		- MaxJoy: Số điểm vui vẻ tối đa
+		- MaxLife: Số điểm tuổi thọ tối đa
+	- Base: Thông tin cơ bản
+		- BaseAttackSkillID: ID kỹ năng đánh thường cơ bản
+		- LevelUpRemainPoints: Số điểm tiềm năng cộng thêm mỗi khi lên cấp
+		- DieLoseLife: Số điểm tuổi thọ mất khi chết
+		- CallFightRequịreJoyOver: Xuất chiến yêu cầu phải có tối thiểu bao nhiêu điểm vui vẻ
+		- CallFightRequịreLifeOver: Xuất chiến yêu cầu phải có tối thiểu bao nhiêu điểm tuổi thọ
+		- CallFightCostJoy: Xuất chiến tiêu hao bao nhiêu điểm vui vẻ
+		- SubJoyInterval: Thời gian mỗi khoảng sẽ giảm độ vui vẻ của tinh linh đi 1 điểm (mili-giây)
+		- OwnerExpP: % kinh nghiệm nhận được từ chủ nhân khi giết quái
+	- Items: Danh sách vật phẩm chức năng
+		- ResetAttributesItemID: ID vật phẩm tẩy điểm tiềm năng
+		- SkillStudyMedicineItemID: ID vật phẩm lĩnh hội đan
+	- Feed: Thông tin các vật phẩm chức năng
+		- Joyful: Độ vui vẻ
+			- Item: Thông tin vật phẩm
+				- ItemID: ID vật phẩm
+				- Point: Số điểm tăng thêm
+		- Life: Tuổi thọ
+			- Item: Thông tin vật phẩm
+				- ItemID: ID vật phẩm
+				- Point: Số điểm tăng thêm
+		- Enlightenment: Lĩnh ngộ
+			- Item: Thông tin vật phẩm
+				- ItemID: ID vật phẩm
+				- Point: Số điểm tăng thêm
+	- ExpList: Danh sách kinh nghiệm thăng cấp theo cấp độ đánh dấu từ 1
+		- Value: Giá trị kinh nghiệm yêu cầu
+	- Scrolls: Danh sách sách kỹ năng
+		- Scroll: Thông tin sách
+			- ItemID: ID vật phẩm sách
+			- SkillID: ID kỹ năng sẽ học được
+	- SkillLevelUp: Thông tin thăng cấp kỹ năng
+		- LevelUpData: Thông tin thăng cấp (đánh số từ 1)
+			- Rate: Tỷ lệ %
+			- RequireEnlightenment: Số điểm lĩnh ngộ yêu cầu
+	- SkillStudyRates: Danh sách tỷ lệ học được kỹ năng mới theo cấp độ hiện tại của kỹ năng (đánh số từ 0), nếu hỏng sẽ đè lên kỹ năng bất kỳ hiện có
+		- Data: Dữ liệu
+			- StudyNewRate: Tỷ lệ học mới (%)
+-->
+<PetConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Limitation MaxCanTake="5" MaxLevel="120" MaxSkill="10" MaxJoy="100" MaxLife="100" />
+	
+	<Base BaseAttackSkillID="14001" LevelUpRemainPoints="5" DieLoseLife="10" CallFightRequịreJoyOver="10" CallFightRequịreLifeOver="10" CallFightCostJoy="2" SubJoyInterval="1800000" OwnerExpP="25" />
+	
+	<Items ResetAttributesItemID="15126" SkillStudyMedicineItemID="15135" />
+	
+	<Feed>
+		<Joyful>
+			<Item ItemID="15136" Point="10" />
+			<Item ItemID="191" Point="100" />
+			<Item ItemID="192" Point="300" />
+			<Item ItemID="193" Point="900" />
+			<Item ItemID="393" Point="100" />
+			<Item ItemID="394" Point="300" />
+			<Item ItemID="395" Point="900" />
+
+
+		</Joyful>
+		<Life>
+			<Item ItemID="10402" Point="10" />
+			<Item ItemID="191" Point="100" />
+			<Item ItemID="192" Point="300" />
+			<Item ItemID="193" Point="900" />
+			<Item ItemID="393" Point="100" />
+			<Item ItemID="394" Point="300" />
+			<Item ItemID="395" Point="900" />
+		</Life>
+		<Enlightenment>
+			<Item ItemID="15135" Point="10" />
+			<Item ItemID="191" Point="100" />
+			<Item ItemID="192" Point="300" />
+			<Item ItemID="193" Point="900" />
+			<Item ItemID="393" Point="100" />
+			<Item ItemID="394" Point="300" />
+			<Item ItemID="395" Point="900" />
+		</Enlightenment>
+	</Feed>
+	
+	<ExpList>
+		<Exp Value="1000" />
+		<Exp Value="2000" />
+		<Exp Value="3000" />
+		<Exp Value="4500" />
+		<Exp Value="5800" />
+		<Exp Value="7000" />
+		<Exp Value="8400" />
+		<Exp Value="11300" />
+		<Exp Value="17000" />
+		<Exp Value="22400" />
+		<Exp Value="29000" />
+		<Exp Value="36000" />
+		<Exp Value="45000" />
+		<Exp Value="58000" />
+		<Exp Value="75000" />
+		<Exp Value="95000" />
+		<Exp Value="120000" />
+		<Exp Value="175000" />
+		<Exp Value="244600" />
+		<Exp Value="250000" />
+		<Exp Value="256000" />
+		<Exp Value="264000" />
+		<Exp Value="273000" />
+		<Exp Value="283000" />
+		<Exp Value="303000" />
+		<Exp Value="343000" />
+		<Exp Value="423000" />
+		<Exp Value="572000" />
+		<Exp Value="993000" />
+		<Exp Value="1030000" />
+		<Exp Value="1069000" />
+		<Exp Value="1111000" />
+		<Exp Value="1158000" />
+		<Exp Value="1213000" />
+		<Exp Value="1282000" />
+		<Exp Value="1373000" />
+		<Exp Value="1494000" />
+		<Exp Value="1650000" />
+		<Exp Value="1820000" />
+		<Exp Value="1830000" />
+		<Exp Value="1905200" />
+		<Exp Value="2000400" />
+		<Exp Value="2200000" />
+		<Exp Value="2420000" />
+		<Exp Value="2662000" />
+		<Exp Value="3058000" />
+		<Exp Value="3520000" />
+		<Exp Value="4219600" />
+		<Exp Value="5884800" />
+		<Exp Value="5900000" />
+		<Exp Value="5990000" />
+		<Exp Value="6240000" />
+		<Exp Value="6540000" />
+		<Exp Value="6940000" />
+		<Exp Value="7440000" />
+		<Exp Value="8040000" />
+		<Exp Value="8740000" />
+		<Exp Value="9740000" />
+		<Exp Value="12550000" />
+		<Exp Value="12600000" />
+		<Exp Value="12800000" />
+		<Exp Value="13100000" />
+		<Exp Value="13500000" />
+		<Exp Value="14000000" />
+		<Exp Value="14700000" />
+		<Exp Value="15700000" />
+		<Exp Value="17250000" />
+		<Exp Value="19250000" />
+		<Exp Value="23340000" />
+		<Exp Value="23600000" />
+		<Exp Value="25100000" />
+		<Exp Value="26700000" />
+		<Exp Value="28400000" />
+		<Exp Value="30200000" />
+		<Exp Value="33100000" />
+		<Exp Value="36200000" />
+		<Exp Value="39500000" />
+		<Exp Value="43000000" />
+		<Exp Value="49000000" />
+		<Exp Value="50490000" />
+		<Exp Value="52104000" />
+		<Exp Value="54060000" />
+		<Exp Value="57240000" />
+		<Exp Value="62700000" />
+		<Exp Value="70560000" />
+		<Exp Value="79800000" />
+		<Exp Value="91640000" />
+		<Exp Value="105020000" />
+		<Exp Value="129600000" />
+		<Exp Value="129840000" />
+		<Exp Value="132480000" />
+		<Exp Value="139080000" />
+		<Exp Value="150240000" />
+		<Exp Value="165240000" />
+		<Exp Value="181800000" />
+		<Exp Value="199920000" />
+		<Exp Value="216120000" />
+		<Exp Value="237840000" />
+		<Exp Value="284880000" />
+		<Exp Value="285600000" />
+		<Exp Value="286800000" />
+		<Exp Value="292800000" />
+		<Exp Value="300000000" />
+		<Exp Value="312000000" />
+		<Exp Value="328800000" />
+		<Exp Value="350400000" />
+		<Exp Value="375600000" />
+		<Exp Value="406800000" />
+		<Exp Value="506400000" />
+		<Exp Value="507000000" />
+		<Exp Value="508200000" />
+		<Exp Value="510600000" />
+		<Exp Value="516600000" />
+		<Exp Value="528600000" />
+		<Exp Value="552600000" />
+		<Exp Value="612360000" />
+		<Exp Value="730200000" />
+		<Exp Value="895800000" />
+		<Exp Value="1152600000" />
+		<Exp Value="1164000000" />
+	</ExpList>
+	
+	<Scrolls>
+		
+		<Scroll ItemID="15245" SkillID="23722" />     <!-- Skill hỗ trợ -->
+		<Scroll ItemID="15246" SkillID="23732" />     <!-- Skill hỗ trợ -->
+		<Scroll ItemID="15247" SkillID="23742" />     <!-- Skill hỗ trợ -->
+		<Scroll ItemID="15248" SkillID="23752" />     <!-- Skill hỗ trợ -->
+		<Scroll ItemID="15249" SkillID="23762" />     <!-- Skill hỗ trợ -->
+		<Scroll ItemID="15250" SkillID="23772" />     <!-- Skill hỗ trợ -->
+		<Scroll ItemID="15251" SkillID="23782" />     <!-- Skill hỗ trợ -->
+		<Scroll ItemID="15252" SkillID="23792" />     <!-- Skill hỗ trợ -->
+		<Scroll ItemID="15253" SkillID="23802" />     <!-- Skill hỗ trợ -->
+		<Scroll ItemID="15254" SkillID="23812" />     <!-- Skill hỗ trợ -->
+		<Scroll ItemID="15255" SkillID="23822" />     <!-- Skill hỗ trợ -->
+		<Scroll ItemID="15256" SkillID="23832" />     <!-- Skill hỗ trợ -->
+		<Scroll ItemID="15257" SkillID="23842" />     <!-- Skill hỗ trợ -->
+		<Scroll ItemID="15258" SkillID="23852" />     <!-- Skill hỗ trợ -->		
+				
+	</Scrolls>
+	
+	<SkillLevelUp>
+		<LevelUpData Rate="100" RequireEnlightenment="100" />
+		<LevelUpData Rate="90" RequireEnlightenment="200" />
+		<LevelUpData Rate="80" RequireEnlightenment="300" />
+		<LevelUpData Rate="70" RequireEnlightenment="400" />
+		<LevelUpData Rate="60" RequireEnlightenment="500" />
+		<LevelUpData Rate="50" RequireEnlightenment="600" />
+		<LevelUpData Rate="40" RequireEnlightenment="700" />
+		<LevelUpData Rate="30" RequireEnlightenment="800" />
+		<LevelUpData Rate="20" RequireEnlightenment="900" />
+		<LevelUpData Rate="10" RequireEnlightenment="1000" />
+		<LevelUpData Rate="9" RequireEnlightenment="1100" />
+		<LevelUpData Rate="8" RequireEnlightenment="1200" />
+		<LevelUpData Rate="7" RequireEnlightenment="1300" />
+		<LevelUpData Rate="6" RequireEnlightenment="1300" />
+		<LevelUpData Rate="5" RequireEnlightenment="1400" />
+		<LevelUpData Rate="4" RequireEnlightenment="1500" />
+		<LevelUpData Rate="3" RequireEnlightenment="1600" />
+		<LevelUpData Rate="2" RequireEnlightenment="1700" />
+		<LevelUpData Rate="1" RequireEnlightenment="1800" />
+		<LevelUpData Rate="1" RequireEnlightenment="1900" />
+		<LevelUpData Rate="1" RequireEnlightenment="2000" />
+		<LevelUpData Rate="0" RequireEnlightenment="2100" />
+	</SkillLevelUp>
+	
+	<SkillStudyRates>
+		<Data StudyNewRate="100" />
+		<Data StudyNewRate="60" />
+		<Data StudyNewRate="50" />
+		<Data StudyNewRate="45" />
+		<Data StudyNewRate="40" />
+		<Data StudyNewRate="35" />
+		<Data StudyNewRate="30" />
+		<Data StudyNewRate="10" />
+	</SkillStudyRates>
+</PetConfig>

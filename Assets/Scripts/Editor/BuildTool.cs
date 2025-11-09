@@ -523,6 +523,53 @@ public class BuildTool : MonoBehaviour
     //    }
     //}
 
+    [MenuItem("Build Res/Build Animator Controller (Single)")]
+    static void BuildAnimatorController()
+    {
+        // Chọn file .controller
+        string path = EditorUtility.OpenFilePanel("Select Animator Controller", "Assets", "controller");
+        if (string.IsNullOrEmpty(path))
+            return;
+
+        // Chuyển sang relative path (Assets/...)
+        if (!path.StartsWith(Application.dataPath))
+        {
+            Debug.LogError("Please select a file inside Assets/.");
+            return;
+        }
+        string relativePath = "Assets" + path.Substring(Application.dataPath.Length);
+
+        // Load controller
+        RuntimeAnimatorController controller = AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(relativePath);
+        if (controller == null)
+        {
+            Debug.LogError("Không load được RuntimeAnimatorController từ: " + relativePath);
+            return;
+        }
+
+        // Chọn thư mục xuất bundle
+        string outputFolder = EditorUtility.SaveFolderPanel("Select Output Folder", "Build/AnimatorBundles", "");
+        if (string.IsNullOrEmpty(outputFolder))
+            return;
+
+        // Đặt tên bundle trùng tên file controller
+        string bundleName = Path.GetFileNameWithoutExtension(path);
+        string outputPath = Path.Combine(outputFolder, bundleName + ".unity3d");
+
+        // Build bundle
+        Debug.Log($"Building bundle: {bundleName}");
+        BuildPipeline.BuildAssetBundle(
+            controller,
+            null, // để Unity tự collect dependency
+            outputPath,
+            BuildAssetBundleOptions.CollectDependencies | BuildAssetBundleOptions.CompleteAssets,
+            BuildTarget.Android // hoặc iOS, Windows tuỳ platform
+        );
+
+        AssetDatabase.Refresh();
+        Debug.Log($"✅ Build xong bundle: {outputPath}");
+    }
+
     [MenuItem("Build Res/Android - Build All Assets inside selected folders individually (For build MAP)")]
     static void AndroidBuildAllResourcesInsideFolderIndividually()
     {

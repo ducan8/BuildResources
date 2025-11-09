@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	type 7|3|8|9|10 là phòng cụ
+    1|2 là vũ khí
+    4|5|6|11 là trang sức
+-->
+<GemStone xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Config MaxGemPerEquip="3"/>
+	<DrillingRequire>
+		<Level ID="1" Money="500000" BoundMoney="0" Gold="0" BoundGold="0" THL="0" EXP="0">
+            <ItemRequire ID="15666" Count="1"/>
+        </Level>
+        <Level ID="2" Money="1000000" BoundMoney="0" Gold="0" BoundGold="0" THL="0" EXP="0">
+            <ItemRequire ID="15777" Count="1"/>
+        </Level>
+        <Level ID="3" Money="20000000" BoundMoney="0" Gold="0" BoundGold="0" THL="0" EXP="0">
+            <ItemRequire ID="15888" Count="1"/>
+        </Level>
+		<Level ID="4" Money="40000000" BoundMoney="0" Gold="0" BoundGold="0" THL="0" EXP="0">
+            <ItemRequire ID="15999" Count="1"/>
+        </Level>
+	</DrillingRequire>
+    <TakeOutRequire>
+        <Level ID="1" Money="500000" BoundMoney="0" Gold="0" BoundGold="0" THL="0" EXP="0">
+        </Level>
+        <Level ID="2" Money="500000" BoundMoney="0" Gold="0" BoundGold="0" THL="0" EXP="0">
+        </Level>
+        <Level ID="3" Money="500000" BoundMoney="0" Gold="0" BoundGold="0" THL="0" EXP="0">
+        </Level>
+        <Level ID="4" Money="500000" BoundMoney="0" Gold="0" BoundGold="0" THL="0" EXP="0">
+        </Level>
+		<Level ID="5" Money="500000" BoundMoney="0" Gold="0" BoundGold="0" THL="0" EXP="0">
+        </Level>
+		<Level ID="6" Money="500000" BoundMoney="0" Gold="0" BoundGold="0" THL="0" EXP="0">
+        </Level>
+		<Level ID="7" Money="500000" BoundMoney="0" Gold="0" BoundGold="0" THL="0" EXP="0">
+        </Level>
+		<Level ID="8" Money="500000" BoundMoney="0" Gold="0" BoundGold="0" THL="0" EXP="0">
+        </Level>
+		<Level ID="9" Money="500000" BoundMoney="0" Gold="0" BoundGold="0" THL="0" EXP="0">
+        </Level>
+		<Level ID="10" Money="500000" BoundMoney="0" Gold="0" BoundGold="0" THL="0" EXP="0">
+        </Level>
+    </TakeOutRequire>
+	<MergeGem>
+		<Level ID="1" Money="0" BoundMoney="0" Gold="0" BoundGold="0" THL="0" EXP="0">
+        </Level>
+	</MergeGem>
+    <GemData>
+    <!-- tấn công -->
+        <Gem SourceID="15146" NextID="15149" Level="1" Type="1" Equip="1|2">
+            <Attribute ID="119" AttrValue="5"/>
+            <Attribute ID="120" AttrValue="5"/>
+        </Gem>
+		<Gem SourceID="15147" NextID="15150" Level="1" Type="2" Equip="1|2">
+            <Attribute ID="114" AttrValue="102"/>
+            <Attribute ID="143" AttrValue="102"/>
+        </Gem>
+		<Gem SourceID="15148" NextID="15151" Level="1" Type="3" Equip="1|2">
+            <Attribute ID="200" AttrValue="1"/>
+            <Attribute ID="206" AttrValue="1"/>
+        </Gem>
+        <Gem SourceID="15149" NextID="15152" Level="2" Type="1" Equip="1|2">
+            <Attribute ID="119" AttrValue="8"/>
+            <Attribute ID="120" AttrValue="8"/>
+        </Gem>
+		<Gem SourceID="15150" NextID="15153" Level="2" Type="2" Equip="1|2">
+            <Attribute ID="114" AttrValue="153"/>
+            <Attribute ID="143" AttrValue="153"/>
+        </Gem>
+		<Gem SourceID="15151" NextID="15154" Level="2" Type="3" Equip="1|2">
+            <Attribute ID="200" AttrValue="2"/>
+            <Attribute ID="206" AttrValue="2"/>
+        </Gem>
+        <Gem SourceID="15152" NextID="15155" Level="3" Type="1" Equip="1|2">
+            <Attribute ID="119" AttrValue="11"/>
+            <Attribute ID="120" AttrValue="11"/>
+        </Gem>
+		<Gem SourceID="15153" NextID="15156" Level="3" Type="2" Equip="1|2">
+            <Attribute ID="114" AttrValue="230"/>
+            <Attribute ID="143" AttrValue="230"/>
+        </Gem>
+		<Gem SourceID="15154" NextID="15157" Level="3" Type="3" Equip="1|2">
+            <Attribute ID="200" AttrValue="3"/>
+            <Attribute ID="206" AttrValue="3"/>
+        </Gem>
+		<Gem SourceID="15155" NextID="15158" Level="4" Type="1" Equip="1|2">
+            <Attribute ID="119" AttrValue="17"/>
+            <Attribute ID="120" AttrValue="17"/>
+        </Gem>
+		<Gem SourceID="15156" NextID="15159" Level="4" Type="2" Equip="1|2">
+            <Attribute ID="114" AttrValue="344"/>
+            <Attribute ID="143" AttrValue="344"/>
+        </Gem>
+		<Gem SourceID="15157" NextID="15160" Level="4" Type="3" Equip="1|2">
+            <Attribute ID="200" AttrValue="5"/>
+            <Attribute ID="206" AttrValue="5"/>
+        </Gem>
+		<Gem SourceID="15158" NextID="15161" Level="5" Type="1" Equip="1|2">
+            <Attribute ID="119" AttrValue="25"/>
+            <Attribute ID="120" AttrValue="25"/>
+        </Gem>
+		<Gem SourceID="15159" NextID="15162" Level="5" Type="2" Equip="1|2">
+            <Attribute ID="114" AttrValue="516"/>
+            <Attribute ID="143" AttrValue="516"/>
+        </Gem>
+		<Gem SourceID="15160" NextID="15163" Level="5" Type="3" Equip="1|2">
+            <Attribute ID="200" AttrValue="7"/>
+            <Attribute ID="206" AttrValue="7"/>
+        </Gem>
+		<Gem SourceID="15161" NextID="15164" Level="6" Type="1" Equip="1|2">
+            <Attribute ID="119" AttrValue="33"/>
+            <Attribute ID="120" AttrValue="33"/>
+        </Gem>
+		<Gem SourceID="15162" NextID="15165" Level="6" Type="2" Equip="1|2">
+            <Attribute ID="114" AttrValue="671"/>
+            <Attribute ID="143" AttrValue="671"/>
+        </Gem>
+		<Gem SourceID="15163" NextID="15166" Level="6" Type="3" Equip="1|2">
+            <Attribute ID="200" AttrValue="9"/>
+            <Attribute ID="206" AttrValue="9"/>
+        </Gem>
+		<Gem SourceID="15164" NextID="15167" Level="7" Type="1" Equip="1|2">
+            <Attribute ID="119" AttrValue="43"/>
+            <Attribute ID="120" AttrValue="43"/>
+        </Gem>
+		<Gem SourceID="15165" NextID="15168" Level="7" Type="2" Equip="1|2">
+            <Attribute ID="114" AttrValue="873"/>
+            <Attribute ID="143" AttrValue="873"/>
+        </Gem>
+		<Gem SourceID="15166" NextID="15169" Level="7" Type="3" Equip="1|2">
+            <Attribute ID="200" AttrValue="11"/>
+            <Attribute ID="206" AttrValue="11"/>
+        </Gem>
+		<Gem SourceID="15167" NextID="15170" Level="8" Type="1" Equip="1|2">
+            <Attribute ID="119" AttrValue="56"/>
+            <Attribute ID="120" AttrValue="56"/>
+        </Gem>
+		<Gem SourceID="15168" NextID="15171" Level="8" Type="2" Equip="1|2">
+            <Attribute ID="114" AttrValue="1134"/>
+            <Attribute ID="143" AttrValue="1134"/>
+        </Gem>
+		<Gem SourceID="15169" NextID="15172" Level="8" Type="3" Equip="1|2">
+            <Attribute ID="200" AttrValue="15"/>
+            <Attribute ID="206" AttrValue="15"/>
+        </Gem>
+		<Gem SourceID="15170" NextID="15173" Level="9" Type="1" Equip="1|2">
+            <Attribute ID="119" AttrValue="72"/>
+            <Attribute ID="120" AttrValue="72"/>
+        </Gem>
+		<Gem SourceID="15171" NextID="15174" Level="9" Type="2" Equip="1|2">
+            <Attribute ID="114" AttrValue="1475"/>
+            <Attribute ID="143" AttrValue="1475"/>
+        </Gem>
+		<Gem SourceID="15172" NextID="15175" Level="9" Type="3" Equip="1|2">
+            <Attribute ID="200" AttrValue="19"/>
+            <Attribute ID="206" AttrValue="19"/>
+        </Gem>
+		<Gem SourceID="15173" NextID="0" Level="10" Type="1" Equip="1|2">
+            <Attribute ID="119" AttrValue="94"/>
+            <Attribute ID="120" AttrValue="94"/>
+        </Gem>
+		<Gem SourceID="15174" NextID="0" Level="10" Type="2" Equip="1|2">
+            <Attribute ID="114" AttrValue="1917"/>
+            <Attribute ID="143" AttrValue="1917"/>
+        </Gem>
+		<Gem SourceID="15175" NextID="0" Level="10" Type="3" Equip="1|2">
+            <Attribute ID="200" AttrValue="25"/>
+            <Attribute ID="206" AttrValue="25"/>
+        </Gem>
+<!-- phòng thủ -->
+        <Gem SourceID="15176" NextID="15179" Level="1" Type="1" Equip="7|3|8|9|10">
+            <Attribute ID="85" AttrValue="65"/>           
+        </Gem>
+        <Gem SourceID="15177" NextID="15180" Level="1" Type="2" Equip="7|3|8|9|10">
+            <Attribute ID="136" AttrValue="10"/>            
+        </Gem>
+        <Gem SourceID="15178" NextID="15181" Level="1" Type="3" Equip="7|3|8|9|10">
+            <Attribute ID="769" AttrValue="8"/>         
+        </Gem>
+		<Gem SourceID="15179" NextID="15182" Level="2" Type="1" Equip="7|3|8|9|10">
+            <Attribute ID="85" AttrValue="98"/>           
+        </Gem>
+        <Gem SourceID="15180" NextID="15183" Level="2" Type="2" Equip="7|3|8|9|10">
+            <Attribute ID="136" AttrValue="15"/>            
+        </Gem>
+        <Gem SourceID="15181" NextID="15184" Level="2" Type="3" Equip="7|3|8|9|10">
+            <Attribute ID="769" AttrValue="12"/>         
+        </Gem>
+		<Gem SourceID="15182" NextID="15185" Level="3" Type="1" Equip="7|3|8|9|10">
+            <Attribute ID="85" AttrValue="146"/>           
+        </Gem>
+        <Gem SourceID="15183" NextID="15186" Level="3" Type="2" Equip="7|3|8|9|10">
+            <Attribute ID="136" AttrValue="23"/>            
+        </Gem>
+        <Gem SourceID="15184" NextID="15187" Level="3" Type="3" Equip="7|3|8|9|10">
+            <Attribute ID="769" AttrValue="18"/>         
+        </Gem>
+		<Gem SourceID="15185" NextID="15188" Level="4" Type="1" Equip="7|3|8|9|10">
+            <Attribute ID="85" AttrValue="219"/>           
+        </Gem>
+        <Gem SourceID="15186" NextID="15189" Level="4" Type="2" Equip="7|3|8|9|10">
+            <Attribute ID="136" AttrValue="34"/>            
+        </Gem>
+        <Gem SourceID="15187" NextID="15190" Level="4" Type="3" Equip="7|3|8|9|10">
+            <Attribute ID="769" AttrValue="27"/>         
+        </Gem>
+		<Gem SourceID="15188" NextID="15191" Level="5" Type="1" Equip="7|3|8|9|10">
+            <Attribute ID="85" AttrValue="329"/>           
+        </Gem>
+        <Gem SourceID="15189" NextID="15192" Level="5" Type="2" Equip="7|3|8|9|10">
+            <Attribute ID="136" AttrValue="51"/>            
+        </Gem>
+        <Gem SourceID="15190" NextID="15193" Level="5" Type="3" Equip="7|3|8|9|10">
+            <Attribute ID="769" AttrValue="41"/>         
+        </Gem>
+		<Gem SourceID="15191" NextID="15194" Level="6" Type="1" Equip="7|3|8|9|10">
+            <Attribute ID="85" AttrValue="428"/>           
+        </Gem>
+        <Gem SourceID="15192" NextID="15195" Level="6" Type="2" Equip="7|3|8|9|10">
+            <Attribute ID="136" AttrValue="66"/>            
+        </Gem>
+        <Gem SourceID="15193" NextID="15196" Level="6" Type="3" Equip="7|3|8|9|10">
+            <Attribute ID="769" AttrValue="53"/>         
+        </Gem>
+		<Gem SourceID="15194" NextID="15197" Level="7" Type="1" Equip="7|3|8|9|10">
+            <Attribute ID="85" AttrValue="556"/>           
+        </Gem>
+        <Gem SourceID="15195" NextID="15198" Level="7" Type="2" Equip="7|3|8|9|10">
+            <Attribute ID="136" AttrValue="86"/>            
+        </Gem>
+        <Gem SourceID="15196" NextID="15199" Level="7" Type="3" Equip="7|3|8|9|10">
+            <Attribute ID="769" AttrValue="68"/>         
+        </Gem>
+		<Gem SourceID="15197" NextID="15200" Level="8" Type="1" Equip="7|3|8|9|10">
+            <Attribute ID="85" AttrValue="723"/>           
+        </Gem>
+        <Gem SourceID="15198" NextID="15201" Level="8" Type="2" Equip="7|3|8|9|10">
+            <Attribute ID="136" AttrValue="111"/>
+        </Gem>
+        <Gem SourceID="15199" NextID="15202" Level="8" Type="3" Equip="7|3|8|9|10">
+            <Attribute ID="769" AttrValue="89"/>         
+        </Gem>
+		<Gem SourceID="15200" NextID="15203" Level="9" Type="1" Equip="7|3|8|9|10">
+            <Attribute ID="85" AttrValue="940"/>           
+        </Gem>
+        <Gem SourceID="15201" NextID="15204" Level="9" Type="2" Equip="7|3|8|9|10">
+            <Attribute ID="136" AttrValue="145"/>            
+        </Gem>
+        <Gem SourceID="15202" NextID="15205" Level="9" Type="3" Equip="7|3|8|9|10">
+            <Attribute ID="769" AttrValue="116"/>         
+        </Gem>
+		<Gem SourceID="15203" NextID="0" Level="10" Type="1" Equip="7|3|8|9|10">
+            <Attribute ID="85" AttrValue="1222"/>           
+        </Gem>
+        <Gem SourceID="15204" NextID="0" Level="10" Type="2" Equip="7|3|8|9|10">
+            <Attribute ID="136" AttrValue="188"/>            
+        </Gem>
+        <Gem SourceID="15205" NextID="0" Level="10" Type="3" Equip="7|3|8|9|10">
+            <Attribute ID="769" AttrValue="150"/>         
+        </Gem>
+<!-- hỗ trợ -->
+        <Gem SourceID="15206" NextID="15209" Level="1" Type="1" Equip="4|5|6|11">
+            <Attribute ID="134" AttrValue="5"/>
+        </Gem>
+        <Gem SourceID="15207" NextID="15210" Level="1" Type="2" Equip="4|5|6|11">
+            <Attribute ID="208" AttrValue="10"/>
+        </Gem>
+        <Gem SourceID="15208" NextID="15211" Level="1" Type="3" Equip="4|5|6|11">
+            <Attribute ID="183" AttrValue="20"/>
+        </Gem>
+		<Gem SourceID="15209" NextID="15212" Level="2" Type="1" Equip="4|5|6|11">
+            <Attribute ID="134" AttrValue="8"/>
+        </Gem>
+        <Gem SourceID="15210" NextID="15213" Level="2" Type="2" Equip="4|5|6|11">
+            <Attribute ID="208" AttrValue="15"/>
+        </Gem>
+        <Gem SourceID="15211" NextID="15214" Level="2" Type="3" Equip="4|5|6|11">
+            <Attribute ID="183" AttrValue="30"/>
+        </Gem>
+		<Gem SourceID="15212" NextID="15215" Level="3" Type="1" Equip="4|5|6|11">
+            <Attribute ID="134" AttrValue="11"/>
+        </Gem>
+        <Gem SourceID="15213" NextID="15216" Level="3" Type="2" Equip="4|5|6|11">
+            <Attribute ID="208" AttrValue="23"/>
+        </Gem>
+        <Gem SourceID="15214" NextID="15217" Level="3" Type="3" Equip="4|5|6|11">
+            <Attribute ID="183" AttrValue="45"/>
+        </Gem>
+		<Gem SourceID="15215" NextID="15218" Level="4" Type="1" Equip="4|5|6|11">
+            <Attribute ID="134" AttrValue="17"/>
+        </Gem>
+        <Gem SourceID="15216" NextID="15219" Level="4" Type="2" Equip="4|5|6|11">
+            <Attribute ID="208" AttrValue="34"/>
+        </Gem>
+        <Gem SourceID="15217" NextID="15220" Level="4" Type="3" Equip="4|5|6|11">
+            <Attribute ID="183" AttrValue="68"/>
+        </Gem>
+		<Gem SourceID="15218" NextID="15221" Level="5" Type="1" Equip="4|5|6|11">
+            <Attribute ID="134" AttrValue="25"/>
+        </Gem>
+        <Gem SourceID="15219" NextID="15222" Level="5" Type="2" Equip="4|5|6|11">
+            <Attribute ID="208" AttrValue="51"/>
+        </Gem>
+        <Gem SourceID="15220" NextID="15223" Level="5" Type="3" Equip="4|5|6|11">
+            <Attribute ID="183" AttrValue="101"/>
+        </Gem>
+		<Gem SourceID="15221" NextID="15224" Level="6" Type="1" Equip="4|5|6|11">
+            <Attribute ID="134" AttrValue="33"/>
+        </Gem>
+        <Gem SourceID="15222" NextID="15225" Level="6" Type="2" Equip="4|5|6|11">
+            <Attribute ID="208" AttrValue="66"/>
+        </Gem>
+        <Gem SourceID="15223" NextID="15226" Level="6" Type="3" Equip="4|5|6|11">
+            <Attribute ID="183" AttrValue="132"/>
+        </Gem>
+		<Gem SourceID="15224" NextID="15227" Level="7" Type="1" Equip="4|5|6|11">
+            <Attribute ID="134" AttrValue="43"/>
+        </Gem>
+        <Gem SourceID="15225" NextID="15228" Level="7" Type="2" Equip="4|5|6|11">
+            <Attribute ID="208" AttrValue="86"/>
+        </Gem>
+        <Gem SourceID="15226" NextID="15229" Level="7" Type="3" Equip="4|5|6|11">
+            <Attribute ID="183" AttrValue="171"/>
+        </Gem>
+		<Gem SourceID="15227" NextID="15230" Level="8" Type="1" Equip="4|5|6|11">
+            <Attribute ID="134" AttrValue="56"/>
+        </Gem>
+        <Gem SourceID="15228" NextID="15231" Level="8" Type="2" Equip="4|5|6|11">
+            <Attribute ID="208" AttrValue="111"/>
+        </Gem>
+        <Gem SourceID="15229" NextID="15232" Level="8" Type="3" Equip="4|5|6|11">
+            <Attribute ID="183" AttrValue="222"/>
+        </Gem>
+		<Gem SourceID="15230" NextID="15233" Level="9" Type="1" Equip="4|5|6|11">
+            <Attribute ID="134" AttrValue="72"/>
+        </Gem>
+        <Gem SourceID="15231" NextID="15234" Level="9" Type="2" Equip="4|5|6|11">
+            <Attribute ID="208" AttrValue="145"/>
+        </Gem>
+        <Gem SourceID="15232" NextID="15235" Level="9" Type="3" Equip="4|5|6|11">
+            <Attribute ID="183" AttrValue="289"/>
+        </Gem>
+		<Gem SourceID="15233" NextID="0" Level="10" Type="1" Equip="4|5|6|11">
+            <Attribute ID="134" AttrValue="94"/>
+        </Gem>
+        <Gem SourceID="15234" NextID="0" Level="10" Type="2" Equip="4|5|6|11">
+            <Attribute ID="208" AttrValue="188"/>
+        </Gem>
+        <Gem SourceID="15235" NextID="0" Level="10" Type="3" Equip="4|5|6|11">
+            <Attribute ID="183" AttrValue="376"/>
+        </Gem>
+    </GemData>
+</GemStone>

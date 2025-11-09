@@ -100,10 +100,6 @@ public class MyTools : EditorWindow
             name = name.Replace(c, '_');
         return name.Trim();
     }
-
-   
-
-
 }
 
 
